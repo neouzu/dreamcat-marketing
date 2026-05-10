@@ -1,0 +1,409 @@
+---
+// DreamCat 마케팅 랜딩 페이지 — 정적 HTML 1장.
+// 디자인 톤: 앱과 동일 — sky blue (#249CE3), 둥근 모서리, 따뜻한 톤
+const APP_NAME = 'DreamCat';
+const TAGLINE = '꿈을 이루는 가장 다정한 방법';
+const SUB = 'AI 고양이 타이거가 매일 한 걸음씩 함께 걸어요';
+const APP_STORE_URL = 'https://apps.apple.com/app/dreamcat'; // TODO: 실제 출시 후 갱신
+const PLAY_STORE_URL = ''; // 출시 후 추가
+const SUPPORT_EMAIL = 'hello@dreamcat.app';
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{APP_NAME} — {TAGLINE}</title>
+    <meta name="description" content={`${TAGLINE}. ${SUB}`} />
+    <meta name="theme-color" content="#249CE3" />
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${APP_NAME} — ${TAGLINE}`} />
+    <meta property="og:description" content={SUB} />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+  </head>
+
+  <body>
+    <main>
+      <!-- ─── Hero ─────────────────────────────────────────── -->
+      <section class="hero">
+        <div class="hero-content">
+          <img src="/icon.png" alt="DreamCat" class="hero-icon" />
+          <h1>{TAGLINE}</h1>
+          <p class="sub">{SUB}</p>
+
+          <div class="cta-row">
+            <a class="cta-btn appstore" href={APP_STORE_URL} target="_blank" rel="noopener">
+              <span class="cta-eyebrow">Download on the</span>
+              <span class="cta-store">App Store</span>
+            </a>
+            {PLAY_STORE_URL && (
+              <a class="cta-btn playstore" href={PLAY_STORE_URL} target="_blank" rel="noopener">
+                <span class="cta-eyebrow">Get it on</span>
+                <span class="cta-store">Google Play</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        <!-- 스크린샷 placeholder — 실제 사진은 출시 직전 교체 -->
+        <div class="hero-shot" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="placeholder-text">앱 스크린샷</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Features ─────────────────────────────────────── -->
+      <section class="features">
+        <h2>이렇게 도와드려요</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-emoji">🎯</div>
+            <h3>AI 마일스톤 플랜</h3>
+            <p>
+              "한국사능력검정 1급 따기" 같은 큰 꿈을 입력하면, 타이거가 단계별 마일스톤과
+              매일 할 수 있는 작은 퀘스트로 쪼개드려요.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-emoji">🐾</div>
+            <h3>매일 응원해주는 고양이</h3>
+            <p>
+              퀘스트 완료, 연속 기록, 일기에 매일 다른 멘트로 반응. 비교하지 않고
+              내 페이스대로 걷도록 옆에 앉아주는 친구.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-emoji">📅</div>
+            <h3>일정도, 일기도, 한 곳에</h3>
+            <p>
+              퀘스트·루틴·할 일·일정·기념일·일기·집중 타이머까지. 하루 흐름을 한 화면에
+              담고, 기기 캘린더와도 자동 동기화돼요.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-emoji">🌍</div>
+            <h3>12개 언어</h3>
+            <p>
+              한국어 · 영어 · 日本語 · 中文(简体) · Español · Português · Deutsch ·
+              Français · Italiano · Русский · हिन्दी · Bahasa Indonesia.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-emoji">✨</div>
+            <h3>옷 갈아입히는 재미</h3>
+            <p>
+              퀘스트로 모은 코인으로 타이거 옷장 꾸미기. 시즌별 의상, 배경, 소품까지
+              직접 코디할 수 있어요.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-emoji">🔒</div>
+            <h3>내 데이터, 내가 관리</h3>
+            <p>
+              계정 없이도 시작 가능. 동기화 원하면 Apple/Google 로그인.
+              모든 데이터는 본인만 접근, 언제든 내보내기·삭제 가능.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── About ───────────────────────────────────────── -->
+      <section class="about">
+        <h2>왜 만들었어요?</h2>
+        <p>
+          꿈은 크게 가지지만, 매일 어떻게 한 걸음씩 가야 할지는 막막해요.
+          DreamCat은 그 사이 빈 공간을 채우려고 만들었어요.
+          AI가 큰 꿈을 작은 퀘스트로 쪼개주고, 고양이가 옆에서 응원해줘요.
+          비교 없이, 처벌 없이, 내 속도대로.
+        </p>
+      </section>
+
+      <!-- ─── Footer ──────────────────────────────────────── -->
+      <footer>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="/icon.png" alt="DreamCat" class="footer-icon" />
+            <span>DreamCat</span>
+          </div>
+          <nav class="footer-nav">
+            <a href="/terms">이용약관</a>
+            <a href="/privacy">개인정보 처리방침</a>
+            <a href={`mailto:${SUPPORT_EMAIL}`}>문의</a>
+          </nav>
+          <p class="footer-copy">© 2026 UZUPLAY. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <style>
+      :root {
+        --primary: #249ce3;
+        --primary-dark: #1a82bd;
+        --bg: #f5f6f8;
+        --bg-soft: #eaf6fe;
+        --text-primary: #2b2d2f;
+        --text-secondary: #6b7785;
+        --card: #ffffff;
+        --border: #e8eaed;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          'Pretendard',
+          -apple-system,
+          BlinkMacSystemFont,
+          system-ui,
+          sans-serif;
+        font-weight: 400;
+        background: var(--bg);
+        color: var(--text-primary);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 800;
+        line-height: 1.2;
+        color: var(--text-primary);
+      }
+
+      /* ─── Hero ─── */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        padding: 80px 0 100px;
+      }
+      @media (max-width: 800px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 48px 0 60px;
+          text-align: center;
+        }
+      }
+      .hero-icon {
+        width: 88px;
+        height: 88px;
+        border-radius: 22px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 24px rgba(36, 156, 227, 0.25);
+      }
+      .hero h1 {
+        font-size: 44px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 800px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+      }
+      .hero .sub {
+        font-size: 18px;
+        color: var(--text-secondary);
+        margin-bottom: 28px;
+      }
+      .cta-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 800px) {
+        .cta-row {
+          justify-content: center;
+        }
+      }
+      .cta-btn {
+        display: inline-flex;
+        flex-direction: column;
+        text-decoration: none;
+        background: #1a1a1a;
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 12px;
+        line-height: 1.1;
+        transition: transform 0.2s;
+      }
+      .cta-btn:hover {
+        transform: translateY(-2px);
+      }
+      .cta-eyebrow {
+        font-size: 11px;
+        opacity: 0.85;
+      }
+      .cta-store {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      /* Phone mockup placeholder */
+      .hero-shot {
+        display: flex;
+        justify-content: center;
+      }
+      .phone-frame {
+        width: 280px;
+        height: 580px;
+        background: #1a1a1a;
+        border-radius: 38px;
+        padding: 14px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+      }
+      .phone-screen {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, var(--bg-soft) 0%, var(--card) 100%);
+        border-radius: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        font-size: 15px;
+      }
+
+      /* ─── Features ─── */
+      .features {
+        padding: 80px 0;
+        text-align: center;
+      }
+      .features h2 {
+        font-size: 36px;
+        margin-bottom: 48px;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        text-align: left;
+      }
+      @media (max-width: 800px) {
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .feature {
+        background: var(--card);
+        padding: 28px;
+        border-radius: 18px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .feature:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(36, 156, 227, 0.12);
+      }
+      .feature-emoji {
+        font-size: 36px;
+        margin-bottom: 12px;
+      }
+      .feature h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .feature p {
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+
+      /* ─── About ─── */
+      .about {
+        padding: 80px 0;
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .about h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      .about p {
+        font-size: 17px;
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+      /* ─── Footer ─── */
+      footer {
+        background: #fff;
+        margin-top: 60px;
+        padding: 40px 20px;
+        border-top: 1px solid var(--border);
+      }
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .footer-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+      }
+      .footer-nav {
+        display: flex;
+        gap: 18px;
+        flex: 1;
+        justify-content: center;
+      }
+      @media (max-width: 800px) {
+        .footer-nav {
+          flex: 1 0 100%;
+          justify-content: flex-start;
+        }
+      }
+      .footer-nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .footer-nav a:hover {
+        color: var(--primary);
+      }
+      .footer-copy {
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+    </style>
+  </body>
+</html>
