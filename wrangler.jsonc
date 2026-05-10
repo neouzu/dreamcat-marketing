@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dreamcat-marketing",
+  "compatibility_date": "2025-05-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
