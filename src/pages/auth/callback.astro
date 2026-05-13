@@ -1,0 +1,201 @@
+---
+// Supabase Auth 이메일 인증 콜백 페이지.
+//
+// 동작:
+//  1. Supabase 이메일 링크 클릭 → 이 페이지로 도착 (URL hash 에 access_token, refresh_token).
+//  2. 모바일 디바이스면 dreamcat:// deep link 로 자동 전환 시도 → 앱 안에서 세션 복원.
+//  3. 데스크탑/앱 미설치면 안내 메시지 + App Store 링크.
+const APP_NAME = 'DreamCat';
+const APP_STORE_URL = 'https://apps.apple.com/app/dreamcat';
+const PLAY_STORE_URL = '';
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>이메일 인증 — {APP_NAME}</title>
+    <meta name="theme-color" content="#249CE3" />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <style>
+      :root {
+        --brand: #249ce3;
+        --bg: #f5f6f8;
+        --card: #ffffff;
+        --text: #2b2d2f;
+        --sub: #6b7785;
+        --border: #e5e7eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 24px;
+        padding: 40px 28px;
+        max-width: 440px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      }
+      .icon {
+        width: 96px;
+        height: 96px;
+        border-radius: 24px;
+        margin: 0 auto 24px;
+        display: block;
+      }
+      h1 {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 12px;
+        line-height: 1.4;
+      }
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--sub);
+        margin: 0 0 24px;
+      }
+      .cta {
+        display: inline-block;
+        background: var(--brand);
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 16px;
+        box-shadow: 0 4px 16px rgba(36, 156, 227, 0.3);
+        transition: transform 0.15s ease;
+      }
+      .cta:hover {
+        transform: translateY(-1px);
+      }
+      .secondary {
+        display: block;
+        margin-top: 16px;
+        font-size: 13px;
+        color: var(--sub);
+        text-decoration: none;
+      }
+      .secondary:hover {
+        color: var(--brand);
+      }
+      .status {
+        font-size: 13px;
+        color: var(--sub);
+        margin-top: 24px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .error {
+        color: #d32f2f;
+      }
+      .success {
+        color: #2e7d32;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="/icon.png" alt="DreamCat" class="icon" />
+      <h1 id="title">이메일 인증 처리 중...</h1>
+      <p id="message">잠시만 기다려주세요.</p>
+      <a id="open-app" href="#" class="cta" style="display:none">앱에서 열기</a>
+      <a id="store-link" href={APP_STORE_URL} class="secondary" style="display:none">
+        앱이 없으신가요? App Store 에서 다운로드
+      </a>
+      <div id="status" class="status"></div>
+    </div>
+
+    <script is:inline>
+      // URL 의 hash 또는 query 에서 토큰/오류 추출
+      function parseAuthParams() {
+        const result = {};
+        const extract = (str) => {
+          if (!str) return;
+          str.split('&').forEach((pair) => {
+            const eq = pair.indexOf('=');
+            if (eq < 0) return;
+            const k = decodeURIComponent(pair.substring(0, eq));
+            const v = decodeURIComponent(pair.substring(eq + 1));
+            result[k] = v;
+          });
+        };
+        extract(window.location.hash.startsWith('#') ? window.location.hash.substring(1) : '');
+        extract(window.location.search.startsWith('?') ? window.location.search.substring(1) : '');
+        return result;
+      }
+
+      function isMobile() {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      }
+
+      const params = parseAuthParams();
+      const title = document.getElementById('title');
+      const message = document.getElementById('message');
+      const openBtn = document.getElementById('open-app');
+      const storeLink = document.getElementById('store-link');
+      const status = document.getElementById('status');
+
+      // 1. 오류
+      if (params.error || params.error_description) {
+        title.textContent = '인증 실패';
+        title.classList.add('error');
+        message.textContent = decodeURIComponent(
+          params.error_description || params.error
+        ).replace(/\+/g, ' ');
+        storeLink.style.display = 'block';
+      }
+      // 2. 토큰 수신 — 모바일이면 앱으로 자동 전환 시도
+      else if (params.access_token || params.code) {
+        const queryString = window.location.hash.substring(1) || window.location.search.substring(1);
+        const deepLink = `dreamcat://auth-callback#${queryString}`;
+
+        title.textContent = '인증 완료!';
+        title.classList.add('success');
+
+        if (isMobile()) {
+          message.textContent = '드림캣 앱으로 돌아갑니다...';
+          openBtn.href = deepLink;
+          openBtn.style.display = 'inline-block';
+          storeLink.style.display = 'block';
+
+          // 자동 redirect 시도 — 일부 브라우저에서 차단될 수 있음
+          setTimeout(() => {
+            window.location.href = deepLink;
+          }, 600);
+        } else {
+          message.textContent =
+            '이제 휴대폰의 드림캣 앱으로 돌아가서 로그인해주세요.';
+          storeLink.style.display = 'block';
+        }
+      }
+      // 3. 토큰 없음 — 잘못된 접근
+      else {
+        title.textContent = '잘못된 접근';
+        title.classList.add('error');
+        message.textContent =
+          '이 페이지는 드림캣 이메일 링크를 통해서만 접근할 수 있어요.';
+        storeLink.style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
