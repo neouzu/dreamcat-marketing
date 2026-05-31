@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Stray EAS init artifact (marketing site is Astro static, no Expo)
+app.json
