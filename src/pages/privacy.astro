@@ -7,7 +7,7 @@ const lastUpdated = '2026-05-12';
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>개인정보처리방침 — DreamCat</title>
+    <title>Privacy Policy — DreamCat</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
@@ -16,176 +16,802 @@ const lastUpdated = '2026-05-12';
   <body>
     <main>
       <a href="/" class="back">← DreamCat</a>
-      <h1>개인정보처리방침</h1>
-      <p class="updated">시행일: {lastUpdated}</p>
 
-      <p class="intro">
-        (주)우주플레이(이하 "회사")는 DreamCat 서비스(이하 "서비스") 이용자의 개인정보를
-        중요시하며, 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등
-        관련 법령을 준수하고 있습니다. 본 개인정보처리방침을 통해 이용자가 제공하는 개인정보가
-        어떤 용도와 방식으로 이용되고 있으며, 개인정보 보호를 위해 어떤 조치를 취하고 있는지
-        알려드립니다.
-      </p>
-
-      <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
-      <p>회사는 다음과 같은 개인정보를 수집하고 있습니다.</p>
-
-      <h3>가. 회원가입 시 수집 항목</h3>
-      <ul>
-        <li><strong>필수 항목</strong>: Apple ID 또는 Google 계정 이메일 주소, 고유 사용자 식별자</li>
-        <li><strong>선택 항목</strong>: 닉네임, 생일, 성별</li>
-      </ul>
-
-      <h3>나. 서비스 이용 과정에서 자동으로 수집되는 항목</h3>
-      <ul>
-        <li>기기 정보: 기기 모델명, OS 버전, 앱 버전</li>
-        <li>이용 기록: 서비스 이용 일시, 페이지 방문 기록, 기능 사용 패턴</li>
-        <li>오류 정보: 크래시 리포트 (Sentry를 통해 수집)</li>
-        <li>위치 정보: 일기에 날씨 자동 기록 시에만 (사용자 동의 필요)</li>
-      </ul>
-
-      <h3>다. 사용자가 입력·생성한 콘텐츠</h3>
-      <ul>
-        <li>꿈/목표, 마일스톤, 퀘스트 정보</li>
-        <li>일기 본문, 사진, 기분, 날씨 (사용자가 입력하는 경우)</li>
-        <li>알람, 캘린더 일정, 기념일</li>
-        <li>친구 코드 및 친구 관계 정보 (선택)</li>
-      </ul>
-
-      <h3>라. 결제 정보</h3>
-      <ul>
-        <li>회사는 결제 정보를 직접 수집하지 않습니다.</li>
-        <li>결제는 Apple App Store를 통해 처리되며, 회사는 영수증 검증 정보(트랜잭션 ID, 상품 ID, 결제 시각)만 RevenueCat을 통해 전달받아 구독 상태 관리에 사용합니다.</li>
-      </ul>
-
-      <h2>2. 개인정보의 수집 및 이용 목적</h2>
-      <p>회사는 수집한 개인정보를 다음 목적으로 이용합니다.</p>
-      <ol>
-        <li><strong>서비스 제공</strong>: 회원 식별, 사용자별 맞춤 데이터 제공, 꿈/퀘스트 관리, 알림 발송</li>
-        <li><strong>AI 코칭</strong>: 사용자가 입력한 목표·수준·장애물 정보를 AI 모델(Anthropic Claude)에 전송하여 맞춤 플랜 생성</li>
-        <li><strong>결제 관리</strong>: 구독 상태 동기화, 환불 처리 지원</li>
-        <li><strong>고객 지원</strong>: 문의 응대, 분쟁 해결</li>
-        <li><strong>서비스 개선</strong>: 익명화된 이용 통계 분석 (Amplitude), 오류 추적 (Sentry)</li>
-        <li><strong>법적 의무 이행</strong>: 관련 법령에 따른 보존 의무 이행</li>
-      </ol>
-
-      <h2>3. 개인정보의 보유 및 이용 기간</h2>
-      <ol>
-        <li>회사는 회원의 개인정보를 회원 탈퇴 시까지 보관하며, 탈퇴 시 즉시 파기합니다.</li>
-        <li>다만, 다음 정보는 관련 법령에 따라 일정 기간 보관됩니다.
-          <ul>
-            <li>결제 관련 기록: 5년 (전자상거래법)</li>
-            <li>로그인 기록: 3개월 (통신비밀보호법)</li>
-            <li>소비자 불만 또는 분쟁 처리 기록: 3년 (전자상거래법)</li>
-          </ul>
-        </li>
-        <li>장기 미사용 계정(1년 이상): 분리 보관 후 6개월 추가 미사용 시 자동 삭제</li>
-      </ol>
-
-      <h2>4. 개인정보의 제3자 제공</h2>
-      <p>
-        회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우는
-        예외로 합니다.
-      </p>
-      <ol>
-        <li>이용자가 사전에 동의한 경우</li>
-        <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
-      </ol>
-
-      <h2>5. 개인정보의 처리위탁</h2>
-      <p>회사는 원활한 서비스 제공을 위해 다음과 같이 개인정보 처리를 위탁하고 있습니다.</p>
-      <table>
-        <thead>
-          <tr><th>수탁자</th><th>위탁 업무</th><th>국가</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Supabase, Inc.</td><td>데이터베이스 및 인증 서비스</td><td>미국</td></tr>
-          <tr><td>Anthropic, PBC</td><td>AI 코칭 (Claude API)</td><td>미국</td></tr>
-          <tr><td>Functional Software, Inc. (Sentry)</td><td>오류 추적 및 모니터링</td><td>미국</td></tr>
-          <tr><td>Amplitude, Inc.</td><td>익명 이용 통계 분석</td><td>미국</td></tr>
-          <tr><td>RevenueCat, Inc.</td><td>구독 상태 관리</td><td>미국</td></tr>
-          <tr><td>Apple Inc.</td><td>결제 처리, 푸시 알림, 로그인</td><td>미국</td></tr>
-          <tr><td>Google LLC</td><td>로그인 (선택)</td><td>미국</td></tr>
-          <tr><td>Cloudflare, Inc.</td><td>웹사이트 호스팅 및 도메인 관리</td><td>미국</td></tr>
-        </tbody>
-      </table>
-      <p class="note">
-        위 수탁자들은 개인정보의 안전한 처리를 위해 적절한 기술적·관리적 보호조치를 취하고
-        있으며, 회사는 각 수탁자의 개인정보 처리 활동을 정기적으로 점검합니다.
-      </p>
-
-      <h2>6. 이용자의 권리와 행사 방법</h2>
-      <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
-      <ol>
-        <li>개인정보 조회 및 수정 요청</li>
-        <li>개인정보 삭제 요청 (회원 탈퇴)</li>
-        <li>개인정보 처리 정지 요청</li>
-        <li>개인정보 수집·이용 동의 철회</li>
-      </ol>
-      <p>
-        위 권리는 앱 내 <strong>설정 → 계정 관리</strong> 메뉴에서 직접 행사하거나,
-        <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>으로 요청하실 수 있습니다.
-      </p>
-
-      <h2>7. 개인정보의 파기 절차 및 방법</h2>
-      <ol>
-        <li><strong>파기 절차</strong>: 이용자가 회원 탈퇴를 요청하면 데이터베이스(Supabase)와 모든 백업 저장소에서 즉시 삭제됩니다. 다만, 법령에서 정한 보존 기간이 있는 정보는 별도 분리 보관 후 기간 종료 시 파기합니다.</li>
-        <li><strong>파기 방법</strong>: 전자적 파일은 복구 불가능한 방법으로 영구 삭제하며, 출력물은 분쇄하거나 소각하여 파기합니다.</li>
-      </ol>
-
-      <h2>8. 개인정보의 안전성 확보 조치</h2>
-      <p>회사는 이용자의 개인정보를 안전하게 보호하기 위해 다음 조치를 취하고 있습니다.</p>
-      <ul>
-        <li><strong>암호화</strong>: 모든 통신은 HTTPS/TLS로 암호화. 비밀번호는 단방향 해시 저장 (Supabase Auth bcrypt)</li>
-        <li><strong>접근 통제</strong>: Row Level Security(RLS)를 적용하여 사용자는 본인 데이터에만 접근 가능</li>
-        <li><strong>최소 권한 원칙</strong>: 직원의 데이터 접근 권한을 업무 필요 최소한으로 제한</li>
-        <li><strong>로그 모니터링</strong>: 의심스러운 접근 시도를 실시간 감지·차단</li>
-        <li><strong>정기 보안 점검</strong>: 분기별 보안 취약점 점검 수행</li>
-      </ul>
-
-      <h2>9. 만 14세 미만 아동의 개인정보 보호</h2>
-      <p>
-        회사는 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 만 14세 미만 아동이 회원가입을
-        시도할 경우, 가입을 제한합니다. 만 14세 미만 아동이 부정확하게 가입한 사실이 확인될 경우
-        지체 없이 해당 계정 및 관련 데이터를 삭제합니다.
-      </p>
-
-      <h2>10. 개인정보 보호책임자</h2>
-      <p>회사는 이용자의 개인정보 보호 관련 문의에 대응하기 위해 개인정보 보호책임자를 지정하고 있습니다.</p>
-      <div class="contact-box">
-        <strong>개인정보 보호책임자</strong><br />
-        성명: (주)우주플레이 대표<br />
-        이메일: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>
+      <div class="lang-switcher" role="tablist" aria-label="Language">
+        <button type="button" data-lang-btn="ko">한국어</button>
+        <button type="button" data-lang-btn="en">English</button>
+        <button type="button" data-lang-btn="ja">日本語</button>
+        <button type="button" data-lang-btn="zh-TW">繁體中文</button>
       </div>
 
-      <h2>11. 권익침해 구제방법</h2>
-      <p>
-        개인정보 침해로 인한 피해 구제, 상담 등이 필요한 경우 아래 기관에 문의하실 수 있습니다.
-      </p>
-      <ul>
-        <li>개인정보분쟁조정위원회: 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
-        <li>개인정보침해신고센터: 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
-        <li>대검찰청 사이버수사과: 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
-        <li>경찰청 사이버수사국: 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener">ecrm.cyber.go.kr</a></li>
-      </ul>
+      <!-- ============ KOREAN ============ -->
+      <article data-lang-content="ko" lang="ko">
+        <h1>개인정보처리방침</h1>
+        <p class="updated">시행일: {lastUpdated}</p>
 
-      <h2>12. 개인정보처리방침의 변경</h2>
-      <p>
-        본 개인정보처리방침은 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이
-        있을 시에는 시행 7일 전부터 dreamcat.app 사이트 및 앱 내 공지사항을 통해 고지합니다.
-        다만, 이용자의 권리에 중대한 영향을 주는 변경의 경우 최소 30일 전에 고지합니다.
-      </p>
+        <p class="intro">
+          (주)우주플레이(이하 "회사")는 DreamCat 서비스(이하 "서비스") 이용자의 개인정보를
+          중요시하며, 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등
+          관련 법령을 준수하고 있습니다. 본 개인정보처리방침을 통해 이용자가 제공하는 개인정보가
+          어떤 용도와 방식으로 이용되고 있으며, 개인정보 보호를 위해 어떤 조치를 취하고 있는지
+          알려드립니다.
+        </p>
 
-      <h2>부칙</h2>
-      <p>본 방침은 {lastUpdated}부터 시행합니다.</p>
+        <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
+        <p>회사는 다음과 같은 개인정보를 수집하고 있습니다.</p>
 
-      <div class="contact">
-        <strong>문의</strong><br />
-        이메일: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a><br />
-        운영: (주)우주플레이 (uzuplay)<br />
-        앱: <a href="https://dreamcat.app">DreamCat</a>
-      </div>
+        <h3>가. 회원가입 시 수집 항목</h3>
+        <ul>
+          <li><strong>필수 항목</strong>: Apple ID 또는 Google 계정 이메일 주소, 고유 사용자 식별자</li>
+          <li><strong>선택 항목</strong>: 닉네임, 생일, 성별</li>
+        </ul>
+
+        <h3>나. 서비스 이용 과정에서 자동으로 수집되는 항목</h3>
+        <ul>
+          <li>기기 정보: 기기 모델명, OS 버전, 앱 버전</li>
+          <li>이용 기록: 서비스 이용 일시, 페이지 방문 기록, 기능 사용 패턴</li>
+          <li>오류 정보: 크래시 리포트 (Sentry를 통해 수집)</li>
+          <li>위치 정보: 일기에 날씨 자동 기록 시에만 (사용자 동의 필요)</li>
+        </ul>
+
+        <h3>다. 사용자가 입력·생성한 콘텐츠</h3>
+        <ul>
+          <li>꿈/목표, 마일스톤, 퀘스트 정보</li>
+          <li>일기 본문, 사진, 기분, 날씨 (사용자가 입력하는 경우)</li>
+          <li>알람, 캘린더 일정, 기념일</li>
+          <li>친구 코드 및 친구 관계 정보 (선택)</li>
+        </ul>
+
+        <h3>라. 결제 정보</h3>
+        <ul>
+          <li>회사는 결제 정보를 직접 수집하지 않습니다.</li>
+          <li>결제는 Apple App Store를 통해 처리되며, 회사는 영수증 검증 정보(트랜잭션 ID, 상품 ID, 결제 시각)만 RevenueCat을 통해 전달받아 구독 상태 관리에 사용합니다.</li>
+        </ul>
+
+        <h2>2. 개인정보의 수집 및 이용 목적</h2>
+        <p>회사는 수집한 개인정보를 다음 목적으로 이용합니다.</p>
+        <ol>
+          <li><strong>서비스 제공</strong>: 회원 식별, 사용자별 맞춤 데이터 제공, 꿈/퀘스트 관리, 알림 발송</li>
+          <li><strong>AI 코칭</strong>: 사용자가 입력한 목표·수준·장애물 정보를 AI 모델(Anthropic Claude)에 전송하여 맞춤 플랜 생성</li>
+          <li><strong>결제 관리</strong>: 구독 상태 동기화, 환불 처리 지원</li>
+          <li><strong>고객 지원</strong>: 문의 응대, 분쟁 해결</li>
+          <li><strong>서비스 개선</strong>: 익명화된 이용 통계 분석 (Amplitude), 오류 추적 (Sentry)</li>
+          <li><strong>법적 의무 이행</strong>: 관련 법령에 따른 보존 의무 이행</li>
+        </ol>
+
+        <h2>3. 개인정보의 보유 및 이용 기간</h2>
+        <ol>
+          <li>회사는 회원의 개인정보를 회원 탈퇴 시까지 보관하며, 탈퇴 시 즉시 파기합니다.</li>
+          <li>다만, 다음 정보는 관련 법령에 따라 일정 기간 보관됩니다.
+            <ul>
+              <li>결제 관련 기록: 5년 (전자상거래법)</li>
+              <li>로그인 기록: 3개월 (통신비밀보호법)</li>
+              <li>소비자 불만 또는 분쟁 처리 기록: 3년 (전자상거래법)</li>
+            </ul>
+          </li>
+          <li>장기 미사용 계정(1년 이상): 분리 보관 후 6개월 추가 미사용 시 자동 삭제</li>
+        </ol>
+
+        <h2>4. 개인정보의 제3자 제공</h2>
+        <p>
+          회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우는
+          예외로 합니다.
+        </p>
+        <ol>
+          <li>이용자가 사전에 동의한 경우</li>
+          <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+        </ol>
+
+        <h2>5. 개인정보의 처리위탁</h2>
+        <p>회사는 원활한 서비스 제공을 위해 다음과 같이 개인정보 처리를 위탁하고 있습니다.</p>
+        <table>
+          <thead>
+            <tr><th>수탁자</th><th>위탁 업무</th><th>국가</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Supabase, Inc.</td><td>데이터베이스 및 인증 서비스</td><td>미국</td></tr>
+            <tr><td>Anthropic, PBC</td><td>AI 코칭 (Claude API)</td><td>미국</td></tr>
+            <tr><td>Functional Software, Inc. (Sentry)</td><td>오류 추적 및 모니터링</td><td>미국</td></tr>
+            <tr><td>Amplitude, Inc.</td><td>익명 이용 통계 분석</td><td>미국</td></tr>
+            <tr><td>RevenueCat, Inc.</td><td>구독 상태 관리</td><td>미국</td></tr>
+            <tr><td>Apple Inc.</td><td>결제 처리, 푸시 알림, 로그인</td><td>미국</td></tr>
+            <tr><td>Google LLC</td><td>로그인 (선택)</td><td>미국</td></tr>
+            <tr><td>Cloudflare, Inc.</td><td>웹사이트 호스팅 및 도메인 관리</td><td>미국</td></tr>
+          </tbody>
+        </table>
+        <p class="note">
+          위 수탁자들은 개인정보의 안전한 처리를 위해 적절한 기술적·관리적 보호조치를 취하고
+          있으며, 회사는 각 수탁자의 개인정보 처리 활동을 정기적으로 점검합니다.
+        </p>
+
+        <h2>6. 이용자의 권리와 행사 방법</h2>
+        <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
+        <ol>
+          <li>개인정보 조회 및 수정 요청</li>
+          <li>개인정보 삭제 요청 (회원 탈퇴)</li>
+          <li>개인정보 처리 정지 요청</li>
+          <li>개인정보 수집·이용 동의 철회</li>
+        </ol>
+        <p>
+          위 권리는 앱 내 <strong>설정 → 계정 관리</strong> 메뉴에서 직접 행사하거나,
+          <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>으로 요청하실 수 있습니다.
+        </p>
+
+        <h2>7. 개인정보의 파기 절차 및 방법</h2>
+        <ol>
+          <li><strong>파기 절차</strong>: 이용자가 회원 탈퇴를 요청하면 데이터베이스(Supabase)와 모든 백업 저장소에서 즉시 삭제됩니다. 다만, 법령에서 정한 보존 기간이 있는 정보는 별도 분리 보관 후 기간 종료 시 파기합니다.</li>
+          <li><strong>파기 방법</strong>: 전자적 파일은 복구 불가능한 방법으로 영구 삭제하며, 출력물은 분쇄하거나 소각하여 파기합니다.</li>
+        </ol>
+
+        <h2>8. 개인정보의 안전성 확보 조치</h2>
+        <p>회사는 이용자의 개인정보를 안전하게 보호하기 위해 다음 조치를 취하고 있습니다.</p>
+        <ul>
+          <li><strong>암호화</strong>: 모든 통신은 HTTPS/TLS로 암호화. 비밀번호는 단방향 해시 저장 (Supabase Auth bcrypt)</li>
+          <li><strong>접근 통제</strong>: Row Level Security(RLS)를 적용하여 사용자는 본인 데이터에만 접근 가능</li>
+          <li><strong>최소 권한 원칙</strong>: 직원의 데이터 접근 권한을 업무 필요 최소한으로 제한</li>
+          <li><strong>로그 모니터링</strong>: 의심스러운 접근 시도를 실시간 감지·차단</li>
+          <li><strong>정기 보안 점검</strong>: 분기별 보안 취약점 점검 수행</li>
+        </ul>
+
+        <h2>9. 만 14세 미만 아동의 개인정보 보호</h2>
+        <p>
+          회사는 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 만 14세 미만 아동이 회원가입을
+          시도할 경우, 가입을 제한합니다. 만 14세 미만 아동이 부정확하게 가입한 사실이 확인될 경우
+          지체 없이 해당 계정 및 관련 데이터를 삭제합니다.
+        </p>
+
+        <h2>10. 개인정보 보호책임자</h2>
+        <p>회사는 이용자의 개인정보 보호 관련 문의에 대응하기 위해 개인정보 보호책임자를 지정하고 있습니다.</p>
+        <div class="contact-box">
+          <strong>개인정보 보호책임자</strong><br />
+          성명: (주)우주플레이 대표<br />
+          이메일: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>
+        </div>
+
+        <h2>11. 권익침해 구제방법</h2>
+        <p>
+          개인정보 침해로 인한 피해 구제, 상담 등이 필요한 경우 아래 기관에 문의하실 수 있습니다.
+        </p>
+        <ul>
+          <li>개인정보분쟁조정위원회: 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
+          <li>개인정보침해신고센터: 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>대검찰청 사이버수사과: 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
+          <li>경찰청 사이버수사국: 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener">ecrm.cyber.go.kr</a></li>
+        </ul>
+
+        <h2>12. 개인정보처리방침의 변경</h2>
+        <p>
+          본 개인정보처리방침은 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이
+          있을 시에는 시행 7일 전부터 dreamcat.app 사이트 및 앱 내 공지사항을 통해 고지합니다.
+          다만, 이용자의 권리에 중대한 영향을 주는 변경의 경우 최소 30일 전에 고지합니다.
+        </p>
+
+        <h2>부칙</h2>
+        <p>본 방침은 {lastUpdated}부터 시행합니다.</p>
+
+        <div class="contact">
+          <strong>문의</strong><br />
+          이메일: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a><br />
+          운영: (주)우주플레이 (uzuplay)<br />
+          앱: <a href="https://dreamcat.app">DreamCat</a>
+        </div>
+      </article>
+
+      <!-- ============ ENGLISH ============ -->
+      <article data-lang-content="en" lang="en" hidden>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Effective: {lastUpdated}</p>
+
+        <p class="intro">
+          UZUPLAY Co., Ltd. (hereinafter "the Company") values the privacy of users of the
+          DreamCat service (hereinafter "the Service") and complies with applicable laws including
+          the Personal Information Protection Act of the Republic of Korea and the Act on Promotion
+          of Information and Communications Network Utilization and Information Protection. This
+          Privacy Policy explains how personal information you provide is used and how we protect it.
+        </p>
+
+        <h2>1. Personal Information We Collect and How We Collect It</h2>
+        <p>We collect the following categories of personal information.</p>
+
+        <h3>a. Information collected at sign-up</h3>
+        <ul>
+          <li><strong>Required</strong>: Apple ID or Google account email address, unique user identifier</li>
+          <li><strong>Optional</strong>: nickname, birthday, gender</li>
+        </ul>
+
+        <h3>b. Information automatically collected during use</h3>
+        <ul>
+          <li>Device info: model, OS version, app version</li>
+          <li>Usage logs: timestamps, page visits, feature usage patterns</li>
+          <li>Error reports: crash logs (via Sentry)</li>
+          <li>Location: only when you opt in to auto-weather logging in diary</li>
+        </ul>
+
+        <h3>c. Content you create</h3>
+        <ul>
+          <li>Dreams/goals, milestones, quest information</li>
+          <li>Diary text, photos, mood, weather (as entered by you)</li>
+          <li>Alarms, calendar events, anniversaries</li>
+          <li>Friend code and friendship relations (optional)</li>
+        </ul>
+
+        <h3>d. Payment information</h3>
+        <ul>
+          <li>We do not collect payment information directly.</li>
+          <li>Payments are processed through the Apple App Store. We only receive receipt validation data (transaction ID, product ID, transaction time) via RevenueCat to manage subscription status.</li>
+        </ul>
+
+        <h2>2. Purposes of Collection and Use</h2>
+        <p>We use collected information for the following purposes.</p>
+        <ol>
+          <li><strong>Service delivery</strong>: member identification, personalized data, dream/quest management, sending notifications</li>
+          <li><strong>AI coaching</strong>: transmitting your goals, level, and obstacles to an AI model (Anthropic Claude) to generate personalized plans</li>
+          <li><strong>Payment management</strong>: subscription status sync, refund support</li>
+          <li><strong>Customer support</strong>: responding to inquiries, dispute resolution</li>
+          <li><strong>Service improvement</strong>: anonymized usage analytics (Amplitude), error tracking (Sentry)</li>
+          <li><strong>Legal compliance</strong>: meeting retention obligations under applicable laws</li>
+        </ol>
+
+        <h2>3. Retention Period</h2>
+        <ol>
+          <li>We retain member personal information until account deletion, at which point it is destroyed immediately.</li>
+          <li>However, the following information is retained for the periods required by law:
+            <ul>
+              <li>Payment-related records: 5 years (Korean E-Commerce Act)</li>
+              <li>Login records: 3 months (Korean Telecommunications Privacy Act)</li>
+              <li>Consumer complaint and dispute records: 3 years (Korean E-Commerce Act)</li>
+            </ul>
+          </li>
+          <li>Long-dormant accounts (over 1 year): separated for storage, auto-deleted after an additional 6 months of inactivity</li>
+        </ol>
+
+        <h2>4. Sharing with Third Parties</h2>
+        <p>
+          We do not share user personal information externally as a rule. Exceptions are limited to
+          the following:
+        </p>
+        <ol>
+          <li>When you have provided prior consent</li>
+          <li>When required by law, or when properly requested by investigative authorities pursuant to legal procedures</li>
+        </ol>
+
+        <h2>5. Processing Sub-contractors</h2>
+        <p>We entrust certain processing operations to the following providers in order to operate the Service.</p>
+        <table>
+          <thead>
+            <tr><th>Sub-contractor</th><th>Purpose</th><th>Country</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Supabase, Inc.</td><td>Database and authentication</td><td>USA</td></tr>
+            <tr><td>Anthropic, PBC</td><td>AI coaching (Claude API)</td><td>USA</td></tr>
+            <tr><td>Functional Software, Inc. (Sentry)</td><td>Error tracking and monitoring</td><td>USA</td></tr>
+            <tr><td>Amplitude, Inc.</td><td>Anonymous usage analytics</td><td>USA</td></tr>
+            <tr><td>RevenueCat, Inc.</td><td>Subscription status management</td><td>USA</td></tr>
+            <tr><td>Apple Inc.</td><td>Payments, push notifications, sign-in</td><td>USA</td></tr>
+            <tr><td>Google LLC</td><td>Sign-in (optional)</td><td>USA</td></tr>
+            <tr><td>Cloudflare, Inc.</td><td>Website hosting and domain management</td><td>USA</td></tr>
+          </tbody>
+        </table>
+        <p class="note">
+          These sub-contractors implement appropriate technical and administrative safeguards for
+          secure processing of personal information, and we periodically review their privacy
+          practices.
+        </p>
+
+        <h2>6. User Rights and How to Exercise Them</h2>
+        <p>You may exercise the following rights at any time:</p>
+        <ol>
+          <li>Access and rectification of your personal information</li>
+          <li>Deletion (account closure)</li>
+          <li>Restriction of processing</li>
+          <li>Withdrawal of consent to collection and use</li>
+        </ol>
+        <p>
+          You may exercise these rights directly through <strong>Settings → Account</strong> in the app
+          or by contacting <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>.
+        </p>
+
+        <h2>7. Destruction Procedure and Method</h2>
+        <ol>
+          <li><strong>Procedure</strong>: Upon account deletion request, data is immediately removed from the database (Supabase) and all backup stores. Information subject to legal retention obligations is stored separately and destroyed at the end of the retention period.</li>
+          <li><strong>Method</strong>: Electronic files are permanently deleted in a non-recoverable manner; physical records are shredded or incinerated.</li>
+        </ol>
+
+        <h2>8. Security Safeguards</h2>
+        <p>We take the following measures to protect your personal information:</p>
+        <ul>
+          <li><strong>Encryption</strong>: All transit traffic is encrypted with HTTPS/TLS. Passwords are stored as one-way hashes (Supabase Auth bcrypt).</li>
+          <li><strong>Access control</strong>: Row Level Security (RLS) ensures users can only access their own data.</li>
+          <li><strong>Least-privilege principle</strong>: Employee data access is limited to what is operationally necessary.</li>
+          <li><strong>Log monitoring</strong>: Suspicious access attempts are detected and blocked in real time.</li>
+          <li><strong>Periodic review</strong>: Security vulnerability reviews are conducted quarterly.</li>
+        </ul>
+
+        <h2>9. Children Under 14</h2>
+        <p>
+          We do not collect personal information from children under the age of 14. If a child under
+          14 attempts to register, registration is blocked. If we discover that a child under 14 has
+          inadvertently registered, the account and related data are deleted without delay.
+        </p>
+
+        <h2>10. Privacy Officer</h2>
+        <p>We have designated a Privacy Officer to handle privacy-related inquiries.</p>
+        <div class="contact-box">
+          <strong>Privacy Officer</strong><br />
+          Name: Representative, UZUPLAY Co., Ltd.<br />
+          Email: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>
+        </div>
+
+        <h2>11. Remedies for Rights Infringement</h2>
+        <p>
+          If you need assistance regarding privacy infringement or related counsel, you may contact
+          the following Korean authorities (the Company is established in the Republic of Korea):
+        </p>
+        <ul>
+          <li>Personal Information Dispute Mediation Committee: 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
+          <li>Privacy Infringement Report Center (KISA): 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>Supreme Prosecutors' Office Cyber Investigation: 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
+          <li>National Police Cyber Bureau: 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener">ecrm.cyber.go.kr</a></li>
+        </ul>
+        <p class="note">
+          Users outside Korea may also contact their local data protection authority. The Company
+          will cooperate in good faith with such inquiries.
+        </p>
+
+        <h2>12. Changes to This Policy</h2>
+        <p>
+          If changes are made due to legal, policy, or security updates, we will announce them
+          through dreamcat.app and the in-app notice section at least 7 days before they take
+          effect. For changes that materially affect user rights, we will provide at least 30 days'
+          notice.
+        </p>
+
+        <h2>Appendix</h2>
+        <p>This policy is effective from {lastUpdated}.</p>
+
+        <div class="contact">
+          <strong>Contact</strong><br />
+          Email: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a><br />
+          Operator: UZUPLAY Co., Ltd. (uzuplay)<br />
+          App: <a href="https://dreamcat.app">DreamCat</a>
+        </div>
+
+        <p class="disclaimer">
+          The Korean version of this Privacy Policy is the legally authoritative version.
+          Translations are provided for convenience.
+        </p>
+      </article>
+
+      <!-- ============ JAPANESE ============ -->
+      <article data-lang-content="ja" lang="ja" hidden>
+        <h1>プライバシーポリシー</h1>
+        <p class="updated">施行日: {lastUpdated}</p>
+
+        <p class="intro">
+          株式会社UZUPLAY(以下「当社」)は、DreamCatサービス(以下「本サービス」)の利用者の
+          個人情報を重視し、大韓民国の「個人情報保護法」「情報通信網利用促進及び情報保護等に
+          関する法律」など関連法令を遵守します。本プライバシーポリシーは、利用者が提供する
+          個人情報の利用目的および保護のための措置についてご説明します。
+        </p>
+
+        <h2>1. 収集する個人情報の項目と収集方法</h2>
+        <p>当社は以下の個人情報を収集します。</p>
+
+        <h3>イ. 会員登録時に収集する項目</h3>
+        <ul>
+          <li><strong>必須項目</strong>: Apple IDまたはGoogleアカウントのメールアドレス、固有のユーザー識別子</li>
+          <li><strong>任意項目</strong>: ニックネーム、生年月日、性別</li>
+        </ul>
+
+        <h3>ロ. サービス利用過程で自動的に収集される項目</h3>
+        <ul>
+          <li>端末情報: 機種、OSバージョン、アプリバージョン</li>
+          <li>利用ログ: 利用日時、ページ訪問履歴、機能利用パターン</li>
+          <li>エラー情報: クラッシュレポート (Sentry経由)</li>
+          <li>位置情報: 日記の天気自動記録機能を有効にした場合のみ (利用者の同意が必要)</li>
+        </ul>
+
+        <h3>ハ. 利用者が入力・作成したコンテンツ</h3>
+        <ul>
+          <li>夢・目標、マイルストーン、クエスト情報</li>
+          <li>日記本文、写真、気分、天気 (利用者が入力した場合)</li>
+          <li>アラーム、カレンダー予定、記念日</li>
+          <li>フレンドコードおよびフレンド関係情報 (任意)</li>
+        </ul>
+
+        <h3>ニ. 決済情報</h3>
+        <ul>
+          <li>当社は決済情報を直接収集しません。</li>
+          <li>決済はApple App Storeを通じて処理され、当社は領収書検証情報(トランザクションID、商品ID、決済日時)のみをRevenueCat経由で受け取り、サブスクリプション状態の管理に使用します。</li>
+        </ul>
+
+        <h2>2. 個人情報の収集及び利用目的</h2>
+        <p>当社は収集した個人情報を以下の目的で利用します。</p>
+        <ol>
+          <li><strong>サービス提供</strong>: 会員識別、利用者別データの提供、夢・クエスト管理、通知送信</li>
+          <li><strong>AIコーチング</strong>: 利用者が入力した目標・レベル・障害情報をAIモデル(Anthropic Claude)に送信し、個別プランを生成</li>
+          <li><strong>決済管理</strong>: サブスクリプション状態の同期、返金処理サポート</li>
+          <li><strong>カスタマーサポート</strong>: 問い合わせ対応、紛争解決</li>
+          <li><strong>サービス改善</strong>: 匿名化された利用統計分析 (Amplitude)、エラー追跡 (Sentry)</li>
+          <li><strong>法令遵守</strong>: 関連法令に基づく保存義務の履行</li>
+        </ol>
+
+        <h2>3. 個人情報の保有および利用期間</h2>
+        <ol>
+          <li>当社は会員の個人情報を退会時まで保管し、退会時に直ちに破棄します。</li>
+          <li>ただし、以下の情報は関連法令に基づき一定期間保管されます。
+            <ul>
+              <li>決済関連記録: 5年 (韓国電子商取引法)</li>
+              <li>ログイン記録: 3か月 (韓国通信秘密保護法)</li>
+              <li>消費者の苦情または紛争処理記録: 3年 (韓国電子商取引法)</li>
+            </ul>
+          </li>
+          <li>長期未使用アカウント(1年以上): 分離保管後、追加で6か月未使用の場合自動削除</li>
+        </ol>
+
+        <h2>4. 個人情報の第三者提供</h2>
+        <p>
+          当社は利用者の個人情報を原則として外部に提供しません。ただし、以下の場合は
+          例外とします。
+        </p>
+        <ol>
+          <li>利用者が事前に同意した場合</li>
+          <li>法令の規定に基づくか、捜査目的で法令に定められた手続きおよび方法に従い捜査機関の要求がある場合</li>
+        </ol>
+
+        <h2>5. 個人情報の処理委託</h2>
+        <p>当社は円滑なサービス提供のため、以下のとおり個人情報の処理を委託しています。</p>
+        <table>
+          <thead>
+            <tr><th>受託者</th><th>委託業務</th><th>国</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Supabase, Inc.</td><td>データベースおよび認証サービス</td><td>米国</td></tr>
+            <tr><td>Anthropic, PBC</td><td>AIコーチング (Claude API)</td><td>米国</td></tr>
+            <tr><td>Functional Software, Inc. (Sentry)</td><td>エラー追跡およびモニタリング</td><td>米国</td></tr>
+            <tr><td>Amplitude, Inc.</td><td>匿名利用統計分析</td><td>米国</td></tr>
+            <tr><td>RevenueCat, Inc.</td><td>サブスクリプション管理</td><td>米国</td></tr>
+            <tr><td>Apple Inc.</td><td>決済処理、プッシュ通知、ログイン</td><td>米国</td></tr>
+            <tr><td>Google LLC</td><td>ログイン (任意)</td><td>米国</td></tr>
+            <tr><td>Cloudflare, Inc.</td><td>ウェブサイトホスティングおよびドメイン管理</td><td>米国</td></tr>
+          </tbody>
+        </table>
+        <p class="note">
+          上記の受託者は個人情報の安全な処理のため適切な技術的・管理的保護措置を講じており、
+          当社は各受託者の個人情報処理活動を定期的に点検します。
+        </p>
+
+        <h2>6. 利用者の権利および行使方法</h2>
+        <p>利用者はいつでも以下の権利を行使できます。</p>
+        <ol>
+          <li>個人情報の照会および訂正請求</li>
+          <li>個人情報の削除請求(退会)</li>
+          <li>個人情報処理の停止請求</li>
+          <li>個人情報の収集・利用に関する同意の撤回</li>
+        </ol>
+        <p>
+          上記の権利は、アプリ内の<strong>設定 → アカウント管理</strong>メニューから直接行使するか、
+          <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>へご請求ください。
+        </p>
+
+        <h2>7. 個人情報の破棄手順および方法</h2>
+        <ol>
+          <li><strong>破棄手順</strong>: 利用者が退会を請求した場合、データベース(Supabase)およびすべてのバックアップ保存場所から直ちに削除します。ただし、法令に定める保存期間がある情報は別途分離保管し、期間終了時に破棄します。</li>
+          <li><strong>破棄方法</strong>: 電子ファイルは復元不可能な方法で永久削除し、出力物は破砕または焼却により破棄します。</li>
+        </ol>
+
+        <h2>8. 個人情報の安全性確保措置</h2>
+        <p>当社は利用者の個人情報を安全に保護するため、以下の措置を講じています。</p>
+        <ul>
+          <li><strong>暗号化</strong>: すべての通信はHTTPS/TLSで暗号化。パスワードは一方向ハッシュで保存(Supabase Auth bcrypt)</li>
+          <li><strong>アクセス制御</strong>: Row Level Security(RLS)を適用し、利用者は本人のデータにのみアクセス可能</li>
+          <li><strong>最小権限原則</strong>: 従業員のデータアクセス権限を業務上必要最小限に制限</li>
+          <li><strong>ログ監視</strong>: 不審なアクセスをリアルタイムに検知・遮断</li>
+          <li><strong>定期的なセキュリティ点検</strong>: 四半期ごとに脆弱性点検を実施</li>
+        </ul>
+
+        <h2>9. 14歳未満の児童の個人情報保護</h2>
+        <p>
+          当社は満14歳未満の児童の個人情報を収集しません。満14歳未満の児童が会員登録を試みた
+          場合、登録を制限します。満14歳未満の児童が誤って登録した事実が確認された場合は、
+          速やかに該当アカウントおよび関連データを削除します。
+        </p>
+
+        <h2>10. 個人情報保護責任者</h2>
+        <p>当社は利用者の個人情報保護に関する問い合わせに対応するため、個人情報保護責任者を指定しています。</p>
+        <div class="contact-box">
+          <strong>個人情報保護責任者</strong><br />
+          氏名: 株式会社UZUPLAY 代表<br />
+          メール: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>
+        </div>
+
+        <h2>11. 権益侵害の救済方法</h2>
+        <p>
+          個人情報侵害による被害の救済、相談などが必要な場合、以下の機関にお問い合わせいただけます。
+          (当社は大韓民国に所在しているため、韓国の関連機関を案内します。)
+        </p>
+        <ul>
+          <li>個人情報紛争調停委員会: 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
+          <li>個人情報侵害申告センター (KISA): 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>大検察庁サイバー捜査課: 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
+          <li>警察庁サイバー捜査局: 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener">ecrm.cyber.go.kr</a></li>
+        </ul>
+        <p class="note">
+          日本国内の利用者は、個人情報保護委員会(<a href="https://www.ppc.go.jp" target="_blank" rel="noopener">www.ppc.go.jp</a>)にも相談することができます。
+        </p>
+
+        <h2>12. 本ポリシーの変更</h2>
+        <p>
+          本プライバシーポリシーは、法令・方針またはセキュリティ技術の変更により内容の追加・
+          削除および修正があった場合、施行7日前からdreamcat.appサイトおよびアプリ内のお知らせを通じて
+          告知します。ただし、利用者の権利に重大な影響を与える変更の場合は、最低30日前に告知します。
+        </p>
+
+        <h2>付則</h2>
+        <p>本ポリシーは{lastUpdated}から施行します。</p>
+
+        <div class="contact">
+          <strong>お問い合わせ</strong><br />
+          メール: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a><br />
+          運営: 株式会社UZUPLAY (uzuplay)<br />
+          アプリ: <a href="https://dreamcat.app">DreamCat</a>
+        </div>
+
+        <p class="disclaimer">
+          本プライバシーポリシーの法的に正式な版は韓国語版です。翻訳版は参考用として提供されます。
+        </p>
+      </article>
+
+      <!-- ============ CHINESE TRADITIONAL ============ -->
+      <article data-lang-content="zh-TW" lang="zh-Hant" hidden>
+        <h1>隱私權政策</h1>
+        <p class="updated">生效日期: {lastUpdated}</p>
+
+        <p class="intro">
+          UZUPLAY 股份有限公司(以下簡稱「本公司」)重視 DreamCat 服務(以下簡稱「本服務」)
+          使用者的個人資料,並遵守大韓民國《個人資料保護法》《資訊通訊網利用促進及資訊保護等
+          相關法律》等相關法令。本隱私權政策說明使用者所提供之個人資料的使用目的、方式以及
+          保護措施。
+        </p>
+
+        <h2>1. 蒐集之個人資料項目及方式</h2>
+        <p>本公司蒐集下列個人資料。</p>
+
+        <h3>(一) 註冊時蒐集項目</h3>
+        <ul>
+          <li><strong>必填項目</strong>: Apple ID 或 Google 帳號的電子郵件地址、唯一使用者識別碼</li>
+          <li><strong>選填項目</strong>: 暱稱、生日、性別</li>
+        </ul>
+
+        <h3>(二) 使用服務時自動蒐集項目</h3>
+        <ul>
+          <li>裝置資訊: 機種、作業系統版本、應用程式版本</li>
+          <li>使用紀錄: 使用日期時間、頁面瀏覽紀錄、功能使用模式</li>
+          <li>錯誤資訊: 當機報告 (透過 Sentry 蒐集)</li>
+          <li>位置資訊: 僅在啟用日記自動天氣紀錄時 (需使用者同意)</li>
+        </ul>
+
+        <h3>(三) 使用者輸入及產生之內容</h3>
+        <ul>
+          <li>夢想/目標、里程碑、任務資訊</li>
+          <li>日記內容、相片、心情、天氣 (使用者輸入時)</li>
+          <li>鬧鐘、行事曆行程、紀念日</li>
+          <li>好友代碼及好友關係資訊 (選擇性)</li>
+        </ul>
+
+        <h3>(四) 付款資訊</h3>
+        <ul>
+          <li>本公司不直接蒐集付款資訊。</li>
+          <li>付款由 Apple App Store 處理,本公司僅透過 RevenueCat 接收收據驗證資訊(交易 ID、商品 ID、付款時間),用於訂閱狀態管理。</li>
+        </ul>
+
+        <h2>2. 個人資料蒐集及使用目的</h2>
+        <p>本公司將蒐集之個人資料用於下列目的:</p>
+        <ol>
+          <li><strong>提供服務</strong>: 會員識別、個別化資料提供、夢想/任務管理、推播通知</li>
+          <li><strong>AI 教練</strong>: 將使用者輸入之目標、程度、障礙資訊傳送至 AI 模型 (Anthropic Claude),產生個別化計畫</li>
+          <li><strong>付款管理</strong>: 訂閱狀態同步、退款處理支援</li>
+          <li><strong>客戶服務</strong>: 諮詢回應、爭議解決</li>
+          <li><strong>服務改善</strong>: 匿名化使用統計分析 (Amplitude)、錯誤追蹤 (Sentry)</li>
+          <li><strong>法令遵循</strong>: 履行相關法令規定之保存義務</li>
+        </ol>
+
+        <h2>3. 個人資料保存及利用期間</h2>
+        <ol>
+          <li>本公司於會員退會前保存個人資料,退會時立即銷毀。</li>
+          <li>但下列資訊依相關法令保存一定期間:
+            <ul>
+              <li>付款相關紀錄: 5 年 (韓國電子商務法)</li>
+              <li>登入紀錄: 3 個月 (韓國通信秘密保護法)</li>
+              <li>消費者申訴或爭議處理紀錄: 3 年 (韓國電子商務法)</li>
+            </ul>
+          </li>
+          <li>長期未使用帳戶(超過 1 年): 分離保存,再 6 個月未使用後自動刪除</li>
+        </ol>
+
+        <h2>4. 個人資料之第三方提供</h2>
+        <p>
+          本公司原則上不將使用者之個人資料提供予外部。但下列情形例外:
+        </p>
+        <ol>
+          <li>使用者事前同意之情形</li>
+          <li>依法令規定,或依法定程序及方式應偵查機關要求之情形</li>
+        </ol>
+
+        <h2>5. 個人資料之處理委託</h2>
+        <p>本公司為提供順暢服務,將個人資料處理委託予下列廠商:</p>
+        <table>
+          <thead>
+            <tr><th>受託者</th><th>委託業務</th><th>國家</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Supabase, Inc.</td><td>資料庫及驗證服務</td><td>美國</td></tr>
+            <tr><td>Anthropic, PBC</td><td>AI 教練 (Claude API)</td><td>美國</td></tr>
+            <tr><td>Functional Software, Inc. (Sentry)</td><td>錯誤追蹤及監控</td><td>美國</td></tr>
+            <tr><td>Amplitude, Inc.</td><td>匿名使用統計分析</td><td>美國</td></tr>
+            <tr><td>RevenueCat, Inc.</td><td>訂閱狀態管理</td><td>美國</td></tr>
+            <tr><td>Apple Inc.</td><td>付款處理、推播通知、登入</td><td>美國</td></tr>
+            <tr><td>Google LLC</td><td>登入 (選擇性)</td><td>美國</td></tr>
+            <tr><td>Cloudflare, Inc.</td><td>網站代管及網域管理</td><td>美國</td></tr>
+          </tbody>
+        </table>
+        <p class="note">
+          上述受託者均採取適當之技術性與管理性保護措施以確保個人資料安全處理,本公司並
+          定期檢視各受託者之個人資料處理活動。
+        </p>
+
+        <h2>6. 使用者權利及行使方式</h2>
+        <p>使用者得隨時行使下列權利:</p>
+        <ol>
+          <li>個人資料查閱及更正請求</li>
+          <li>個人資料刪除請求 (退會)</li>
+          <li>個人資料處理停止請求</li>
+          <li>撤回個人資料蒐集及使用同意</li>
+        </ol>
+        <p>
+          上述權利可於應用程式內<strong>設定 → 帳戶管理</strong>選單直接行使,或來信
+          <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a> 請求。
+        </p>
+
+        <h2>7. 個人資料銷毀程序及方法</h2>
+        <ol>
+          <li><strong>銷毀程序</strong>: 使用者請求退會時,資料即時自資料庫 (Supabase) 及所有備份存放區刪除。但依法令規定有保存期間之資訊將另行分離保存,於期間屆滿後銷毀。</li>
+          <li><strong>銷毀方式</strong>: 電子檔以無法復原之方式永久刪除,書面資料以碎紙或焚化方式銷毀。</li>
+        </ol>
+
+        <h2>8. 個人資料安全維護措施</h2>
+        <p>本公司為安全保護使用者個人資料,採取下列措施:</p>
+        <ul>
+          <li><strong>加密</strong>: 所有通訊均以 HTTPS/TLS 加密;密碼以單向雜湊儲存 (Supabase Auth bcrypt)</li>
+          <li><strong>存取控管</strong>: 採用 Row Level Security (RLS),使用者僅能存取本人資料</li>
+          <li><strong>最小權限原則</strong>: 員工資料存取權限限縮於業務必要之最小範圍</li>
+          <li><strong>記錄監控</strong>: 即時偵測並阻擋可疑存取嘗試</li>
+          <li><strong>定期安全檢測</strong>: 每季進行安全弱點檢測</li>
+        </ul>
+
+        <h2>9. 14 歲以下兒童個人資料保護</h2>
+        <p>
+          本公司不蒐集未滿 14 歲兒童之個人資料。未滿 14 歲兒童嘗試註冊時,將限制其註冊。
+          若發現未滿 14 歲兒童誤註冊之事實,將立即刪除該帳戶及相關資料。
+        </p>
+
+        <h2>10. 個人資料保護負責人</h2>
+        <p>本公司指定個人資料保護負責人,負責回應使用者關於個人資料保護之諮詢。</p>
+        <div class="contact-box">
+          <strong>個人資料保護負責人</strong><br />
+          姓名: UZUPLAY 股份有限公司 代表人<br />
+          電子郵件: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a>
+        </div>
+
+        <h2>11. 權益侵害救濟方式</h2>
+        <p>
+          若因個人資料侵害需要救濟或諮詢,可洽下列機關。(本公司所在地為大韓民國,故主要列示
+          韓國之相關機關。)
+        </p>
+        <ul>
+          <li>個人資料爭議調解委員會: 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
+          <li>個人資料侵害申訴中心 (KISA): 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>大檢察廳網路犯罪偵查課: 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
+          <li>警察廳網路犯罪偵查局: 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener">ecrm.cyber.go.kr</a></li>
+        </ul>
+        <p class="note">
+          臺灣地區使用者亦可向所在地之個人資料主管機關 (依《個人資料保護法》之中央目的事業
+          主管機關) 申訴。
+        </p>
+
+        <h2>12. 本政策之變更</h2>
+        <p>
+          本隱私權政策因法令、方針或安全技術之變更而有內容新增、刪除或修改時,將於施行
+          7 日前透過 dreamcat.app 網站及應用程式內公告通知。但對使用者權利有重大影響之
+          變更,將至少於 30 日前通知。
+        </p>
+
+        <h2>附則</h2>
+        <p>本政策自 {lastUpdated} 起施行。</p>
+
+        <div class="contact">
+          <strong>聯絡我們</strong><br />
+          電子郵件: <a href="mailto:hello@dreamcat.app">hello@dreamcat.app</a><br />
+          營運: UZUPLAY 股份有限公司 (uzuplay)<br />
+          應用程式: <a href="https://dreamcat.app">DreamCat</a>
+        </div>
+
+        <p class="disclaimer">
+          本隱私權政策之法律效力以韓文版為準。其他語言版本僅供參考。
+        </p>
+      </article>
     </main>
+
+    <script is:inline>
+      (function () {
+        var supported = ['ko', 'en', 'ja', 'zh-TW'];
+
+        function detectLang() {
+          // 1) ?lang= 우선
+          var url = new URLSearchParams(location.search);
+          var qLang = url.get('lang');
+          if (qLang && supported.indexOf(qLang) !== -1) return qLang;
+
+          // 2) localStorage 기억 (다음 방문 시 빠르게)
+          try {
+            var stored = localStorage.getItem('dc_pp_lang');
+            if (stored && supported.indexOf(stored) !== -1) return stored;
+          } catch (e) {}
+
+          // 3) navigator.language 기반 자동 감지
+          var langs = (navigator.languages && navigator.languages.length)
+            ? navigator.languages
+            : [navigator.language || 'ko'];
+          for (var i = 0; i < langs.length; i++) {
+            var l = (langs[i] || '').toLowerCase();
+            if (l.indexOf('ko') === 0) return 'ko';
+            if (l.indexOf('ja') === 0) return 'ja';
+            if (l.indexOf('zh') === 0) {
+              if (l.indexOf('hant') !== -1 || l.indexOf('tw') !== -1 ||
+                  l.indexOf('hk') !== -1 || l.indexOf('mo') !== -1) return 'zh-TW';
+              return 'en'; // zh-CN / zh-Hans 는 영어로 폴백
+            }
+            if (l.indexOf('en') === 0) return 'en';
+          }
+          return 'en';
+        }
+
+        function applyLang(lang) {
+          if (supported.indexOf(lang) === -1) lang = 'ko';
+          var articles = document.querySelectorAll('[data-lang-content]');
+          for (var i = 0; i < articles.length; i++) {
+            articles[i].hidden = articles[i].getAttribute('data-lang-content') !== lang;
+          }
+          var btns = document.querySelectorAll('[data-lang-btn]');
+          for (var j = 0; j < btns.length; j++) {
+            if (btns[j].getAttribute('data-lang-btn') === lang) {
+              btns[j].classList.add('active');
+            } else {
+              btns[j].classList.remove('active');
+            }
+          }
+          document.documentElement.lang = (lang === 'zh-TW') ? 'zh-Hant' : lang;
+          // title 도 locale 별로 갱신 — 검색엔진/공유 미리보기 정확성
+          var titles = {
+            'ko': '개인정보처리방침 — DreamCat',
+            'en': 'Privacy Policy — DreamCat',
+            'ja': 'プライバシーポリシー — DreamCat',
+            'zh-TW': '隱私權政策 — DreamCat'
+          };
+          document.title = titles[lang] || titles.ko;
+          try { localStorage.setItem('dc_pp_lang', lang); } catch (e) {}
+        }
+
+        applyLang(detectLang());
+
+        var btns = document.querySelectorAll('[data-lang-btn]');
+        for (var k = 0; k < btns.length; k++) {
+          btns[k].addEventListener('click', function (ev) {
+            applyLang(ev.currentTarget.getAttribute('data-lang-btn'));
+          });
+        }
+      })();
+    </script>
 
     <style>
       body {
@@ -205,6 +831,36 @@ const lastUpdated = '2026-05-12';
         text-decoration: none;
         margin-bottom: 24px;
         font-weight: 600;
+      }
+      .lang-switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 28px;
+      }
+      .lang-switcher button {
+        padding: 8px 14px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        background: #ffffff;
+        color: #6b7785;
+        border: 1px solid #e5e7eb;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+      }
+      .lang-switcher button:hover {
+        background: #f5f6f8;
+      }
+      .lang-switcher button.active {
+        background: #249ce3;
+        color: #ffffff;
+        border-color: #249ce3;
+      }
+      article[data-lang-content][lang="ja"],
+      article[data-lang-content][lang="zh-Hant"] {
+        font-family: 'Pretendard', 'Hiragino Sans', 'PingFang TC', sans-serif;
       }
       h1 {
         font-size: 32px;
@@ -287,6 +943,12 @@ const lastUpdated = '2026-05-12';
         font-size: 14px;
         color: #6b7785;
         line-height: 1.8;
+      }
+      .disclaimer {
+        margin-top: 16px;
+        font-size: 12px;
+        color: #9aa3af;
+        font-style: italic;
       }
     </style>
   </body>
