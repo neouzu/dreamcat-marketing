@@ -340,19 +340,27 @@ const LAST_UPDATED = '2026-06-01';
       img { max-width: 100%; display: block; }
       h1, h2, h3 { font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
 
+      /* Eyebrow — 강한 sky blue pill 로 영역 구분 명확 */
       .eyebrow {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 900;
         letter-spacing: 0.08em;
-        color: var(--primary);
-        text-transform: uppercase;
-        background: var(--bg-soft);
-        padding: 6px 14px;
+        color: #fff;
+        background: linear-gradient(135deg, #0a7ec9 0%, #1494d8 100%);
+        padding: 9px 22px;
         border-radius: 999px;
-        margin-bottom: 18px;
+        margin-bottom: 22px;
+        box-shadow: 0 6px 18px rgba(10, 126, 201, 0.32);
       }
-      .eyebrow.center { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+      .eyebrow::before {
+        content: '✦';
+        font-size: 11px;
+        opacity: 0.9;
+      }
+      .eyebrow.center { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
       .eyebrow.light {
         color: #fff;
         background: rgba(255,255,255,0.18);

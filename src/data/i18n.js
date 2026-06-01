@@ -20,7 +20,7 @@ export const I18N = {
       trust3: '3일 무료 체험',
     },
     pain: {
-      eyebrow: '의지의 문제가 아닙니다',
+      eyebrow: '괜찮아요',
       h2: '큰 꿈은 첫 걸음이 가장 무겁죠',
       dreams: [
         '"올해는 꼭 원어민처럼 말할 거야"',
@@ -31,7 +31,7 @@ export const I18N = {
       highlight: '드림캣의 AI 고양이 코치가 당신의 꿈을 오늘 실행 가능한 한 걸음으로 쪼개드립니다.',
     },
     steps: {
-      eyebrow: '드림캣의 3단계 메커니즘',
+      eyebrow: '이렇게 도와요',
       h2: '꿈에서 오늘의 한 걸음까지',
       items: [
         {
@@ -58,8 +58,8 @@ export const I18N = {
       ],
     },
     features: {
-      eyebrow: '필요한 건 다 들어있어요',
-      h2: '오늘 하루를 완성하는 도구들',
+      eyebrow: '다 들어있어요',
+      h2: '오늘 하루를 완성하는 작은 도구들',
       items: [
         { icon: 'btn_diary', title: 'AI 일기', body: '사진과 함께 남기는 일기 + 최근 7일을 기억하는 따뜻한 답장' },
         { icon: 'btn_alarm', title: '감성 알람', body: '고양이 울음으로 부드럽게 깨우는 아침' },
@@ -70,7 +70,7 @@ export const I18N = {
       ],
     },
     diaryHighlight: {
-      eyebrow: '특별히 만든 기능',
+      eyebrow: '오늘 하루 어땠어요?',
       h2: '하루의 끝, 따뜻한 답장이 도착해요',
       body: 'AI 고양이가 오늘 일기를 읽고 최근 7일의 흐름까지 기억해서 답장해줍니다. 위로가 필요한 날엔 위로를, 응원이 필요한 날엔 응원을. 비교 없이, 처벌 없이, 내 페이스대로.',
       bullet1: '사진 첨부로 더 풍부한 기록',
@@ -78,7 +78,7 @@ export const I18N = {
       bullet3: '최근 7일 컨텍스트 인식',
     },
     companion: {
-      eyebrow: '곁에 작은 친구가 있어요',
+      eyebrow: '둘이라서 더 좋아요',
       h2: '함께 자라는 고양이 친구',
       body: '귀여운 AI 고양이가 매일 다른 표정으로 인사합니다. 퀘스트로 모은 코인으로 옷을 갈아입히고, 방을 꾸미며, 당신과 함께 성장해요.',
       tag1: '옷장 커스터마이징',
@@ -86,8 +86,8 @@ export const I18N = {
       tag3: '매일 다른 표정',
     },
     ipad: {
-      eyebrow: '어디서든 같은 경험',
-      h2: 'iPad 에서도 완벽하게',
+      eyebrow: '어디서나 함께',
+      h2: 'iPad 에서도 같은 마음으로',
       body: '아이폰에서 시작한 꿈을 더 큰 화면으로 이어가세요. 캘린더, 다이어리, 꿈 관리 모두 iPad 에 최적화.',
     },
     pricing: {
@@ -124,8 +124,8 @@ export const I18N = {
       },
     },
     languages: {
-      eyebrow: '글로벌',
-      h2: '9개 언어 지원',
+      eyebrow: '전 세계 어디서나',
+      h2: '9개 언어로 만나요',
       body: '내 모국어로, 가장 익숙한 방식으로 꿈을 이루세요.',
       list: '한국어 · English · 日本語 · 中文(简体) · 中文(繁體) · Español · Português · Deutsch · Français',
     },
@@ -161,7 +161,7 @@ export const I18N = {
       trust3: '3-day Free Trial',
     },
     pain: {
-      eyebrow: "It's not a willpower problem",
+      eyebrow: "It's okay",
       h2: 'The first step is the heaviest',
       dreams: [
         '"This year, I\'ll finally speak like a native."',
@@ -172,7 +172,7 @@ export const I18N = {
       highlight: "DreamCat's AI cat coach breaks your dream into one doable step for today.",
     },
     steps: {
-      eyebrow: 'The 3-step mechanism',
+      eyebrow: "Here's how",
       h2: 'From a dream to today\'s step',
       items: [
         {
@@ -199,8 +199,8 @@ export const I18N = {
       ],
     },
     features: {
-      eyebrow: 'Everything you need',
-      h2: 'Tools that complete your day',
+      eyebrow: 'All in one',
+      h2: 'Little tools that make your day',
       items: [
         { icon: 'btn_diary', title: 'AI Diary', body: 'Photos plus a warm reply that remembers your last 7 days' },
         { icon: 'btn_alarm', title: 'Gentle Alarm', body: 'Wake up softly to a cat meow' },
@@ -211,7 +211,7 @@ export const I18N = {
       ],
     },
     diaryHighlight: {
-      eyebrow: 'A signature feature',
+      eyebrow: 'How was your day?',
       h2: 'A warm reply at the end of every day',
       body: 'The AI cat reads your diary and remembers the last 7 days to write back. Comfort when you need it, cheer when you need it. No comparison, no punishment, just your pace.',
       bullet1: 'Richer entries with photos',
@@ -219,7 +219,7 @@ export const I18N = {
       bullet3: 'Context-aware over 7 days',
     },
     companion: {
-      eyebrow: 'A little friend by your side',
+      eyebrow: 'Better together',
       h2: 'A cat that grows with you',
       body: 'A cute AI cat greets you with a different expression every day. Use coins from quests to dress it up, decorate the room, and grow together.',
       tag1: 'Outfit customization',
@@ -227,8 +227,8 @@ export const I18N = {
       tag3: 'Different daily expressions',
     },
     ipad: {
-      eyebrow: 'Anywhere, same experience',
-      h2: 'Perfectly tuned for iPad',
+      eyebrow: 'Anywhere with you',
+      h2: 'Same warmth on iPad',
       body: 'Continue what you started on iPhone on a bigger screen. Calendar, diary, and dream management—all optimized for iPad.',
     },
     pricing: {
@@ -265,8 +265,8 @@ export const I18N = {
       },
     },
     languages: {
-      eyebrow: 'Global',
-      h2: '9 Languages Supported',
+      eyebrow: 'Anywhere in the world',
+      h2: 'In 9 languages',
       body: 'Achieve your dreams in your mother tongue, the way that feels right.',
       list: 'English · 한국어 · 日本語 · 中文(简体) · 中文(繁體) · Español · Português · Deutsch · Français',
     },
@@ -302,7 +302,7 @@ export const I18N = {
       trust3: '3日間無料体験',
     },
     pain: {
-      eyebrow: '意志の問題ではありません',
+      eyebrow: '大丈夫です',
       h2: '大きな夢は最初の一歩が一番重い',
       dreams: [
         '「今年こそ、ネイティブみたいに話したい」',
@@ -313,7 +313,7 @@ export const I18N = {
       highlight: 'DreamCatのAI猫コーチが、あなたの夢を今日できる一歩に分解します。',
     },
     steps: {
-      eyebrow: '目標達成の3ステップ',
+      eyebrow: 'こうやって支えます',
       h2: '夢から今日の一歩まで',
       items: [
         {
@@ -340,8 +340,8 @@ export const I18N = {
       ],
     },
     features: {
-      eyebrow: '必要なものは全部',
-      h2: '一日を完成させるツール',
+      eyebrow: '全部そろってる',
+      h2: '一日を完成させる小さな道具',
       items: [
         { icon: 'btn_diary', title: 'AI日記', body: '写真と共に残す日記と最近7日間を覚えている温かい返事' },
         { icon: 'btn_alarm', title: '優しいアラーム', body: '猫の鳴き声で穏やかに目覚める朝' },
@@ -352,7 +352,7 @@ export const I18N = {
       ],
     },
     diaryHighlight: {
-      eyebrow: '特別な機能',
+      eyebrow: '今日はどうでしたか?',
       h2: '一日の終わりに温かい返事が届きます',
       body: 'AI猫が今日の日記を読み、最近7日間の流れまで覚えて返事をします。慰めが必要な日には慰めを、応援が必要な日には応援を。比較なく、罰もなく、自分のペースで。',
       bullet1: '写真添付でより豊かな記録',
@@ -360,7 +360,7 @@ export const I18N = {
       bullet3: '最近7日間のコンテキスト認識',
     },
     companion: {
-      eyebrow: 'そばに小さな友達',
+      eyebrow: '二人だからもっといい',
       h2: '一緒に育つ猫の友達',
       body: '可愛いAI猫が毎日違う表情で挨拶します。クエストで集めたコインで着せ替え、お部屋デコ、一緒に成長していきましょう。',
       tag1: '着せ替え',
@@ -368,8 +368,8 @@ export const I18N = {
       tag3: '毎日違う表情',
     },
     ipad: {
-      eyebrow: 'どこでも同じ体験',
-      h2: 'iPadでも完璧に',
+      eyebrow: 'どこでも一緒に',
+      h2: 'iPadでも同じ温もりで',
       body: 'iPhoneで始めた夢を、より大きな画面で続けてください。カレンダー、日記、夢の管理、すべてiPadに最適化。',
     },
     pricing: {
@@ -406,8 +406,8 @@ export const I18N = {
       },
     },
     languages: {
-      eyebrow: 'グローバル',
-      h2: '9言語対応',
+      eyebrow: '世界中どこでも',
+      h2: '9言語で会えます',
       body: '母国語で、最も慣れた方法で夢を叶えましょう。',
       list: '日本語 · 한국어 · English · 中文(简体) · 中文(繁體) · Español · Português · Deutsch · Français',
     },
@@ -443,7 +443,7 @@ export const I18N = {
       trust3: '3 天免費體驗',
     },
     pain: {
-      eyebrow: '不是意志力的問題',
+      eyebrow: '沒關係',
       h2: '大夢想最難的是踏出第一步',
       dreams: [
         '「今年一定要說得像母語者一樣」',
@@ -454,7 +454,7 @@ export const I18N = {
       highlight: 'DreamCat 的 AI 貓教練會把你的夢想拆成今天能做的一小步。',
     },
     steps: {
-      eyebrow: '三步驟達成機制',
+      eyebrow: '我們這樣陪你',
       h2: '從夢想到今天的一步',
       items: [
         {
@@ -481,8 +481,8 @@ export const I18N = {
       ],
     },
     features: {
-      eyebrow: '需要的都有',
-      h2: '完美一天的工具',
+      eyebrow: '全部都有',
+      h2: '陪你完成一天的小工具',
       items: [
         { icon: 'btn_diary', title: 'AI 日記', body: '照片配文字日記 + 記得你最近 7 天的溫暖回應' },
         { icon: 'btn_alarm', title: '感性鬧鐘', body: '用貓咪叫聲溫柔喚醒早晨' },
@@ -493,7 +493,7 @@ export const I18N = {
       ],
     },
     diaryHighlight: {
-      eyebrow: '特別打造的功能',
+      eyebrow: '今天過得怎麼樣?',
       h2: '一天的結束,溫暖的回應到達',
       body: 'AI 貓會閱讀你今天的日記,並記得你最近 7 天的脈絡來回應。需要安慰時給安慰,需要鼓勵時給鼓勵。沒有比較、沒有處罰,只有你的節奏。',
       bullet1: '照片附加更豐富的紀錄',
@@ -501,7 +501,7 @@ export const I18N = {
       bullet3: '最近 7 天脈絡感知',
     },
     companion: {
-      eyebrow: '有個小夥伴陪著你',
+      eyebrow: '兩個一起更好',
       h2: '一起成長的貓咪夥伴',
       body: '可愛的 AI 貓每天用不同表情跟你打招呼。用任務累積的金幣幫牠換衣服、佈置房間,一起成長。',
       tag1: '換裝',
@@ -509,8 +509,8 @@ export const I18N = {
       tag3: '每天不同表情',
     },
     ipad: {
-      eyebrow: '到哪都一樣的體驗',
-      h2: 'iPad 也完美對應',
+      eyebrow: '到哪裡都一起',
+      h2: 'iPad 也帶著同樣的溫度',
       body: '從 iPhone 開始的夢想,在更大的螢幕上繼續。行事曆、日記、夢想管理全部為 iPad 最佳化。',
     },
     pricing: {
@@ -547,8 +547,8 @@ export const I18N = {
       },
     },
     languages: {
-      eyebrow: '全球',
-      h2: '支援 9 種語言',
+      eyebrow: '全世界都可以',
+      h2: '用 9 種語言相遇',
       body: '用你的母語、最熟悉的方式實現夢想。',
       list: '繁體中文 · 简体中文 · 한국어 · English · 日本語 · Español · Português · Deutsch · Français',
     },
