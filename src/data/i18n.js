@@ -88,8 +88,8 @@ export const I18N = {
     },
     ipad: {
       eyebrow: '어디서나 함께',
-      h2: 'iPad 에서도 끊김 없이',
-      body: '아이폰에서 시작한 하루를, iPad 큰 화면에서 그대로 이어가요.\n캘린더, 일기, 꿈 관리까지 모두 자연스럽게.',
+      h2: '큰 화면에서도 끊김 없이',
+      body: '핸드폰에서 시작한 하루를, 태블릿 큰 화면에서 그대로 이어가요.\n캘린더, 일기, 꿈 관리까지 모두 자연스럽게.',
     },
     pricing: {
       eyebrow: '내 페이스대로',
@@ -230,8 +230,8 @@ export const I18N = {
     },
     ipad: {
       eyebrow: 'Wherever you are',
-      h2: 'Seamless on iPad too',
-      body: 'Continue the day you started on iPhone, on the bigger iPad screen.\nCalendar, diary, and dream management — all naturally.',
+      h2: 'Seamless on the bigger screen too',
+      body: 'Continue the day you started on your phone, on the bigger tablet screen.\nCalendar, diary, and dream management — all naturally.',
     },
     pricing: {
       eyebrow: 'At your pace',
@@ -372,8 +372,8 @@ export const I18N = {
     },
     ipad: {
       eyebrow: 'どこでも一緒に',
-      h2: 'iPadでも途切れることなく',
-      body: 'iPhoneで始めた一日を、iPadの大きな画面でそのまま続けられます。\nカレンダー、日記、夢の管理まで、すべて自然に。',
+      h2: '大きな画面でも途切れることなく',
+      body: 'スマホで始めた一日を、タブレットの大きな画面でそのまま続けられます。\nカレンダー、日記、夢の管理まで、すべて自然に。',
     },
     pricing: {
       eyebrow: '自分のペースで',
@@ -514,8 +514,8 @@ export const I18N = {
     },
     ipad: {
       eyebrow: '到哪都一起',
-      h2: '在 iPad 也不中斷',
-      body: '從 iPhone 開始的一天,在 iPad 大螢幕上原樣繼續。\n行事曆、日記、夢想管理都自然銜接。',
+      h2: '在大螢幕也不中斷',
+      body: '從手機開始的一天,在平板大螢幕上原樣繼續。\n行事曆、日記、夢想管理都自然銜接。',
     },
     pricing: {
       eyebrow: '依你的節奏',
@@ -632,8 +632,8 @@ export const I18N = {
     },
     ipad: {
       eyebrow: '到哪都一起',
-      h2: '在 iPad 也不中断',
-      body: '从 iPhone 开始的一天,在 iPad 大屏幕上原样继续。\n日历、日记、梦想管理都自然衔接。',
+      h2: '在大屏幕也不中断',
+      body: '从手机开始的一天,在平板大屏幕上原样继续。\n日历、日记、梦想管理都自然衔接。',
     },
     pricing: {
       eyebrow: '依你的节奏', h2: '免费版就很完整',
@@ -701,7 +701,7 @@ export const I18N = {
       body: 'A tu lado hay un pequeño amigo que reacciona a tu día.\nCon las monedas de las misiones lo vistes y decoras la habitación — así pasáis los días juntos.',
       tag1: 'Cambiar de ropa', tag2: 'Decorar habitación', tag3: 'Expresiones variadas',
     },
-    ipad: { eyebrow: 'Contigo en cualquier sitio', h2: 'Sin interrupciones, también en iPad', body: 'El día que empezaste en el iPhone continúa tal cual en la pantalla grande del iPad.\nCalendario, diario, gestión de sueños — todo fluye con naturalidad.' },
+    ipad: { eyebrow: 'Contigo en cualquier sitio', h2: 'Sin interrupciones, también en pantalla grande', body: 'El día que empezaste en el móvil continúa tal cual en la pantalla grande de la tableta.\nCalendario, diario, gestión de sueños — todo fluye con naturalidad.' },
     pricing: {
       eyebrow: 'A tu ritmo', h2: 'Gratis, y ya completo',
       free: { name: 'Gratis', price: '$0', period: 'para siempre', items: [], cta: 'Empezar gratis' },
@@ -766,7 +766,7 @@ export const I18N = {
       body: 'Ao seu lado existe um amiguinho que reage ao seu dia.\nCom as moedas das missões você o veste e decora o quarto — assim vocês passam os dias juntos.',
       tag1: 'Trocar de roupa', tag2: 'Decorar quarto', tag3: 'Expressões variadas',
     },
-    ipad: { eyebrow: 'Em qualquer lugar com você', h2: 'Sem interrupções, também no iPad', body: 'O dia que começou no iPhone continua igual na tela grande do iPad.\nCalendário, diário, gestão de sonhos — tudo flui naturalmente.' },
+    ipad: { eyebrow: 'Em qualquer lugar com você', h2: 'Sem interrupções, também na tela grande', body: 'O dia que começou no celular continua igual na tela grande do tablet.\nCalendário, diário, gestão de sonhos — tudo flui naturalmente.' },
     pricing: {
       eyebrow: 'No seu ritmo', h2: 'Grátis, e já completo',
       free: { name: 'Grátis', price: 'R$0', period: 'para sempre', items: [], cta: 'Começar grátis' },
@@ -831,7 +831,7 @@ export const I18N = {
       body: 'An deiner Seite ist ein kleiner Freund, der auf deinen Tag reagiert.\nMit den Münzen aus Missionen ziehst du ihn an und dekorierst sein Zimmer — so verbringt ihr die Tage zusammen.',
       tag1: 'Umziehen', tag2: 'Zimmer dekorieren', tag3: 'Viele Ausdrücke',
     },
-    ipad: { eyebrow: 'Überall mit dir', h2: 'Auch auf dem iPad ohne Bruch', body: 'Der Tag, der auf dem iPhone begann, geht auf dem großen iPad-Bildschirm nahtlos weiter.\nKalender, Tagebuch, Traumverwaltung — alles fließt natürlich.' },
+    ipad: { eyebrow: 'Überall mit dir', h2: 'Auch auf dem großen Bildschirm ohne Bruch', body: 'Der Tag, der auf dem Handy begann, geht auf dem großen Tablet-Bildschirm nahtlos weiter.\nKalender, Tagebuch, Traumverwaltung — alles fließt natürlich.' },
     pricing: {
       eyebrow: 'In deinem Tempo', h2: 'Kostenlos, und schon komplett',
       free: { name: 'Kostenlos', price: '€0', period: 'für immer', items: [], cta: 'Kostenlos starten' },
@@ -896,7 +896,7 @@ export const I18N = {
       body: 'À tes côtés, il y a un petit ami qui réagit à ta journée.\nAvec les pièces des missions, tu l\'habilles et tu décores la chambre — c\'est comme ça que vous passez vos journées ensemble.',
       tag1: 'Changer de tenue', tag2: 'Décorer la chambre', tag3: 'Expressions variées',
     },
-    ipad: { eyebrow: 'Partout avec toi', h2: "Sans coupure, sur iPad aussi", body: "La journée commencée sur iPhone continue, telle quelle, sur le grand écran de l'iPad.\nCalendrier, journal, gestion des rêves — tout s'enchaîne naturellement." },
+    ipad: { eyebrow: 'Partout avec toi', h2: "Sans coupure, sur grand écran aussi", body: "La journée commencée sur le téléphone continue, telle quelle, sur le grand écran de la tablette.\nCalendrier, journal, gestion des rêves — tout s'enchaîne naturellement." },
     pricing: {
       eyebrow: 'À ton rythme', h2: 'Gratuit, et déjà complet',
       free: { name: 'Gratuit', price: '€0', period: 'pour toujours', items: [], cta: 'Commencer gratuitement' },
