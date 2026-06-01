@@ -75,6 +75,9 @@ const LAST_UPDATED = '2026-06-01';
           <img src="/icons/paws.png" class="hero-deco d2" alt="" />
           <img src="/icons/coin.png" class="hero-deco d3" alt="" />
           <img src="/icons/cat_star_beige.png" class="hero-deco d4" alt="" />
+          <img src="/icons/cat_star_gold.png" class="hero-deco d5" alt="" />
+          <img src="/icons/coin.png" class="hero-deco d6" alt="" />
+          <img src="/icons/paws.png" class="hero-deco d7" alt="" />
         </div>
 
         <div class="hero-grid">
@@ -521,18 +524,20 @@ const LAST_UPDATED = '2026-06-01';
         .navlinks { display: none; }
       }
 
-      /* ─── Hero — 좌우 split, 한 viewport 안에 완결, 앱 톤(sky blue) ─── */
+      /* ─── Hero — 좌우 split + 풍성한 비주얼 + 앱 sky blue 톤 ─── */
       .hero {
         position: relative;
-        min-height: calc(100vh - 64px);
-        max-height: 920px;
+        min-height: 720px;
+        max-height: 900px;
+        height: calc(100vh - 64px);
         display: flex;
         align-items: center;
-        padding: 24px max(20px, 5vw);
+        padding: 32px max(20px, 5vw);
         overflow: hidden;
         background:
-          radial-gradient(ellipse 70% 60% at 80% 50%, rgba(36, 156, 227, 0.12) 0%, transparent 65%),
-          linear-gradient(180deg, #f4faff 0%, #ebf5fd 100%);
+          radial-gradient(ellipse 50% 65% at 78% 50%, rgba(36, 156, 227, 0.18) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 50% at 12% 75%, rgba(255, 233, 168, 0.25) 0%, transparent 60%),
+          linear-gradient(180deg, #f4faff 0%, #e6f2fd 100%);
       }
       .hero-bg {
         position: absolute;
@@ -542,14 +547,17 @@ const LAST_UPDATED = '2026-06-01';
       }
       .hero-deco {
         position: absolute;
-        opacity: 0.65;
+        opacity: 0.7;
         animation: floaty 7s ease-in-out infinite;
         filter: drop-shadow(0 4px 8px rgba(36, 80, 130, 0.08));
       }
-      .hero .d1 { width: 36px; top: 14%; left: 6%; animation-delay: 0s; }
-      .hero .d2 { width: 48px; top: 22%; right: 48%; animation-delay: 0.6s; opacity: 0.4; }
-      .hero .d3 { width: 26px; top: 76%; left: 8%; animation-delay: 1.4s; }
-      .hero .d4 { width: 30px; top: 72%; left: 38%; animation-delay: 2.2s; opacity: 0.5; }
+      .hero .d1 { width: 38px; top: 14%; left: 5%; animation-delay: 0s; }
+      .hero .d2 { width: 32px; top: 30%; left: 38%; animation-delay: 0.6s; opacity: 0.5; }
+      .hero .d3 { width: 28px; top: 82%; left: 6%; animation-delay: 1.4s; }
+      .hero .d4 { width: 42px; top: 18%; left: 48%; animation-delay: 1.0s; opacity: 0.5; }
+      .hero .d5 { width: 30px; top: 78%; left: 44%; animation-delay: 2.0s; opacity: 0.45; }
+      .hero .d6 { width: 36px; top: 12%; right: 6%; animation-delay: 0.8s; }
+      .hero .d7 { width: 48px; bottom: 14%; right: 8%; animation-delay: 2.4s; opacity: 0.55; }
       @keyframes floaty {
         0%, 100% { transform: translateY(0) rotate(0deg); }
         50% { transform: translateY(-12px) rotate(5deg); }
@@ -558,17 +566,17 @@ const LAST_UPDATED = '2026-06-01';
       .hero-grid {
         position: relative;
         z-index: 1;
-        max-width: 1200px;
+        max-width: 1240px;
         margin: 0 auto;
         width: 100%;
         display: grid;
-        grid-template-columns: 1.05fr 1fr;
-        gap: 48px;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
         align-items: center;
       }
 
       .hero-text {
-        max-width: 580px;
+        max-width: 600px;
       }
       .hero-brand {
         display: inline-block;
@@ -577,17 +585,17 @@ const LAST_UPDATED = '2026-06-01';
         letter-spacing: 0.2em;
         color: var(--primary);
         background: #fff;
-        padding: 6px 14px;
+        padding: 7px 16px;
         border-radius: 999px;
-        margin-bottom: 22px;
-        box-shadow: 0 2px 10px rgba(36, 156, 227, 0.15);
+        margin-bottom: 24px;
+        box-shadow: 0 4px 14px rgba(36, 156, 227, 0.18);
       }
       .hero-headline {
         font-weight: 900;
-        font-size: clamp(32px, 4.4vw, 56px);
-        line-height: 1.1;
+        font-size: clamp(36px, 5.2vw, 64px);
+        line-height: 1.08;
         letter-spacing: -0.025em;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         color: var(--text);
       }
       .hero-headline .hl-line { display: block; }
@@ -599,10 +607,10 @@ const LAST_UPDATED = '2026-06-01';
         padding-bottom: 0.06em;
       }
       .hero-sub {
-        font-size: clamp(15px, 1.2vw, 17px);
+        font-size: clamp(15px, 1.25vw, 18px);
         color: var(--text-soft);
-        line-height: 1.6;
-        margin-bottom: 28px;
+        line-height: 1.65;
+        margin-bottom: 32px;
       }
 
       /* Store CTA */
@@ -679,23 +687,32 @@ const LAST_UPDATED = '2026-06-01';
       }
       .trust-sep { color: var(--text-mute); font-weight: 700; }
 
-      /* Cat stage */
+      /* Cat stage — 더 크게, glow halo 추가 */
       .hero-cat-stage {
         position: relative;
         width: 100%;
-        max-width: 520px;
+        max-width: 640px;
         aspect-ratio: 1;
         margin: 0 auto;
-        justify-self: end;
+        justify-self: center;
+      }
+      .hero-cat-stage::before {
+        content: '';
+        position: absolute;
+        inset: 4% 4% 6% 4%;
+        background: radial-gradient(circle at 50% 50%, rgba(36, 156, 227, 0.22) 0%, rgba(36, 156, 227, 0.08) 35%, transparent 65%);
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
       }
       .cat-pedestal {
         position: absolute;
-        left: 12%;
-        right: 12%;
+        left: 14%;
+        right: 14%;
         bottom: 6%;
-        height: 7%;
-        background: radial-gradient(ellipse at 50% 50%, rgba(36, 80, 130, 0.18) 0%, transparent 70%);
-        filter: blur(8px);
+        height: 6%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(36, 80, 130, 0.22) 0%, transparent 70%);
+        filter: blur(10px);
       }
       #cat-canvas {
         position: absolute;
