@@ -231,7 +231,8 @@ function startMouseGaze() {
     const faceCx = rect.left + rect.width * 0.5;
     const faceCy = rect.top + rect.height * 0.42;
     const dx = lastMouse.x - faceCx;
-    const dy = lastMouse.y - faceCy;
+    // 화면 좌표 y 는 아래로 증가, Rive eyeGazeY 는 위가 양수 → 부호 뒤집기.
+    const dy = faceCy - lastMouse.y;
     // 화면 전체 절반 거리를 1로 정규화 (멀리 있어도 부드럽게).
     const norm = Math.max(window.innerWidth, window.innerHeight) * 0.5;
     let gx = dx / norm;
