@@ -93,8 +93,7 @@ function applyLang(lang) {
 
 applyLang(detectLang());
 
-// ───────── 랜덤 hero 배경 이미지 ─────────
-// roomskin / garden 중에서 매번 다른 분위기로 깔림 (sky blue 위에 luminosity blend).
+// ───────── Hero 배경 자동 교체 (5초마다 cross-fade) ─────────
 const HERO_BACKGROUNDS = [
   '/bg/roomskin_01.jpg',
   '/bg/roomskin_02.jpg',
@@ -109,19 +108,48 @@ const HERO_BACKGROUNDS = [
   '/bg/bg_garden_loop.jpg',
   '/bg/bg_garden_top.jpg',
 ];
-(function setRandomHeroBg() {
-  const el = document.getElementById('hero-bg-image');
-  if (!el) return;
-  const pick = HERO_BACKGROUNDS[Math.floor(Math.random() * HERO_BACKGROUNDS.length)];
-  // 부드러운 fade-in
-  const img = new Image();
-  img.onload = () => {
-    el.style.backgroundImage = `url('${pick}')`;
-  };
-  img.onerror = () => {
-    /* 무시 — 단색 sky blue 만 보임 */
-  };
-  img.src = pick;
+const BG_INTERVAL_MS = 5000;
+const BG_FADE_MS = 1200;
+
+(function startBgCycle() {
+  const layerA = document.querySelector('[data-bg-layer="a"]');
+  const layerB = document.querySelector('[data-bg-layer="b"]');
+  if (!layerA || !layerB) return;
+
+  let activeLayer = layerA;
+  let inactiveLayer = layerB;
+  let lastIdx = -1;
+
+  function nextIndex() {
+    let i = Math.floor(Math.random() * HERO_BACKGROUNDS.length);
+    if (i === lastIdx && HERO_BACKGROUNDS.length > 1) i = (i + 1) % HERO_BACKGROUNDS.length;
+    lastIdx = i;
+    return i;
+  }
+
+  function showNext() {
+    const url = HERO_BACKGROUNDS[nextIndex()];
+    const img = new Image();
+    img.onload = () => {
+      // 비활성 레이어에 새 이미지 로드 후 활성화 swap
+      inactiveLayer.style.backgroundImage = `url('${url}')`;
+      requestAnimationFrame(() => {
+        inactiveLayer.classList.add('active');
+        activeLayer.classList.remove('active');
+        // swap roles
+        const tmp = activeLayer;
+        activeLayer = inactiveLayer;
+        inactiveLayer = tmp;
+      });
+    };
+    img.onerror = () => {};
+    img.src = url;
+  }
+
+  // 첫 배경 즉시 표시
+  showNext();
+  // 5초 간격 cycle
+  setInterval(showNext, BG_INTERVAL_MS);
 })();
 
 // 언어 메뉴 토글
@@ -185,20 +213,45 @@ function setVmNumber(vm, name, value) {
   }
 }
 
+// 슬롯별 인덱스 범위 (app 의 catItems.ts 카탈로그 기준).
+const OUTFIT_SLOTS = [
+  { name: 'topIndex', min: 1, max: 6 },
+  { name: 'bottomIndex', min: 1, max: 8 },
+  { name: 'hatIndex', min: 1, max: 6 },
+  { name: 'glassesIndex', min: 1, max: 4 },
+  { name: 'shoesIndex', min: 1, max: 4 },
+  { name: 'necklaceIndex', min: 1, max: 3 },
+  { name: 'bagLeftIndex', min: 1, max: 4 },
+  { name: 'bagRightIndex', min: 1, max: 4 },
+];
+
 function applyRandomOutfit(vm) {
   if (!vm) return;
-  // 슬롯별 사용 가능 인덱스 (app 의 catItems.ts 기준).
-  // 0 = 없음. 일부 슬롯은 자주 안 노출되게 70% 확률로만 활성.
+  // 초기 풀세팅 — 슬롯별 확률로 입거나 비움.
   const equip = (chance, min, max) => (Math.random() < chance ? randInt(min, max) : 0);
+  setVmNumber(vm, 'topIndex', equip(0.85, 1, 6));
+  setVmNumber(vm, 'bottomIndex', equip(0.85, 1, 8));
+  setVmNumber(vm, 'hatIndex', equip(0.55, 1, 6));
+  setVmNumber(vm, 'glassesIndex', equip(0.4, 1, 4));
+  setVmNumber(vm, 'shoesIndex', equip(0.7, 1, 4));
+  setVmNumber(vm, 'necklaceIndex', equip(0.3, 1, 3));
+  setVmNumber(vm, 'bagLeftIndex', equip(0.25, 1, 4));
+  setVmNumber(vm, 'bagRightIndex', equip(0.25, 1, 4));
+}
 
-  setVmNumber(vm, 'topIndex', equip(0.85, 1, 6));      // 상의 1~6
-  setVmNumber(vm, 'bottomIndex', equip(0.85, 1, 8));   // 하의 1~8
-  setVmNumber(vm, 'hatIndex', equip(0.55, 1, 6));      // 모자 — 가끔만
-  setVmNumber(vm, 'glassesIndex', equip(0.4, 1, 4));   // 안경 — 가끔만
-  setVmNumber(vm, 'shoesIndex', equip(0.7, 1, 4));     // 신발
-  setVmNumber(vm, 'necklaceIndex', equip(0.3, 1, 3));  // 목걸이 — 가끔만
-  setVmNumber(vm, 'bagLeftIndex', equip(0.25, 1, 4));  // 왼쪽 가방
-  setVmNumber(vm, 'bagRightIndex', equip(0.25, 1, 4)); // 오른쪽 가방
+// 3초마다 슬롯 하나를 랜덤하게 다른 아이템으로 교체.
+let outfitTimerId = null;
+function startOutfitCycle(vm) {
+  if (!vm) return;
+  if (outfitTimerId) clearInterval(outfitTimerId);
+  outfitTimerId = setInterval(() => {
+    if (!vm) return;
+    // 랜덤 슬롯 선택
+    const slot = OUTFIT_SLOTS[Math.floor(Math.random() * OUTFIT_SLOTS.length)];
+    // 0 (벗기) 가능성도 약간 — 항상 입은 상태만 보이면 단조로움
+    const value = Math.random() < 0.15 ? 0 : randInt(slot.min, slot.max);
+    setVmNumber(vm, slot.name, value);
+  }, 3000);
 }
 
 let riveLoaded = false;
@@ -235,6 +288,7 @@ function loadRive() {
       }
       if (riveVm) {
         applyRandomOutfit(riveVm);
+        startOutfitCycle(riveVm);
         startMouseGaze();
       }
     },

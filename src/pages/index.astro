@@ -70,8 +70,9 @@ const LAST_UPDATED = '2026-06-01';
       <!-- ─── Hero — 좌우 split, 한 viewport 안에 완결 ─── -->
       <section class="hero">
         <div class="hero-bg" aria-hidden="true">
-          <!-- 랜덤 roomskin/garden 배경 — JS 가 inline style 로 설정 -->
-          <div class="hero-bg-image" id="hero-bg-image"></div>
+          <!-- 랜덤 roomskin/garden — 두 레이어 cross-fade 로 부드럽게 교체 -->
+          <div class="hero-bg-image" data-bg-layer="a"></div>
+          <div class="hero-bg-image" data-bg-layer="b"></div>
           <img src="/icons/cat_star_gold.png" class="hero-deco d1" alt="" />
           <img src="/icons/paws.png" class="hero-deco d2" alt="" />
           <img src="/icons/coin.png" class="hero-deco d3" alt="" />
@@ -484,15 +485,19 @@ const LAST_UPDATED = '2026-06-01';
         overflow: hidden;
         background: linear-gradient(180deg, #1f8fc8 0%, #2ba0d8 50%, #3ab1e3 100%);
       }
-      /* 랜덤 배경 이미지 — 낮은 투명도로 깔림 */
+      /* 랜덤 배경 이미지 — 두 레이어 cross-fade */
       .hero-bg-image {
         position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center;
-        opacity: 0.18;
+        opacity: 0;
         mix-blend-mode: luminosity;
-        transition: opacity 0.6s ease;
+        transition: opacity 1.2s ease;
+        will-change: opacity;
+      }
+      .hero-bg-image.active {
+        opacity: 0.18;
       }
       /* 가독성 향상용 부드러운 오버레이 */
       .hero::before {
