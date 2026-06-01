@@ -459,44 +459,99 @@ const LAST_UPDATED = '2026-06-01';
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
 
-      // ───────── Rive (cat.riv) — lazy load ─────────
+      // ───────── Rive (cat.riv) — lazy load + robust fallback ─────────
+      // cat.riv 는 ViewModel Data Binding 기반 (autoBind 필수).
+      // SM 이름은 'Main' 추정 + 자동 fallback 체인.
+      const RIVE_CDN_URLS = [
+        'https://esm.sh/@rive-app/canvas@2.31.1',
+        'https://cdn.jsdelivr.net/npm/@rive-app/canvas@2/+esm',
+        'https://unpkg.com/@rive-app/canvas@2.31.1/rive.mjs',
+      ];
+
+      async function importRive() {
+        for (const url of RIVE_CDN_URLS) {
+          try {
+            const mod = await import(/* @vite-ignore */ url);
+            if (mod?.Rive) {
+              console.log('[Rive] loaded from', url);
+              return mod;
+            }
+          } catch (e) {
+            console.warn('[Rive] failed to load from', url, e.message);
+          }
+        }
+        return null;
+      }
+
+      function tryInit(mod, opts) {
+        return new Promise((resolve) => {
+          let settled = false;
+          const done = (ok) => { if (!settled) { settled = true; resolve(ok); } };
+          try {
+            const r = new mod.Rive({
+              ...opts,
+              onLoad: () => {
+                try { r.resizeDrawingSurfaceToCanvas(); } catch (e) {}
+                console.log('[Rive] onLoad OK', opts);
+                done(true);
+              },
+              onLoadError: (e) => {
+                console.warn('[Rive] onLoadError', opts, e);
+                done(false);
+              },
+            });
+          } catch (e) {
+            console.error('[Rive] init threw', e);
+            done(false);
+          }
+        });
+      }
+
       let riveLoaded = false;
       async function loadRive() {
         if (riveLoaded) return;
         riveLoaded = true;
-        try {
-          const mod = await import('https://cdn.jsdelivr.net/npm/@rive-app/canvas@2/+esm');
-          const canvas = document.getElementById('cat-canvas');
-          if (!canvas) return;
-          const r = new mod.Rive({
-            src: '/rive/cat.riv',
-            canvas,
-            autoplay: true,
-            // State machine 이름 추정 — cat.riv 의 첫 SM 자동 사용 시도
-            stateMachines: 'State Machine 1',
-            onLoad: () => {
-              try { r.resizeDrawingSurfaceToCanvas(); } catch (e) {}
-              canvas.classList.add('loaded');
-            },
-            onLoadError: () => {
-              // SM 매칭 실패 시 단순 artboard 로 재시도
-              try {
-                const r2 = new mod.Rive({
-                  src: '/rive/cat.riv',
-                  canvas,
-                  autoplay: true,
-                  onLoad: () => {
-                    try { r2.resizeDrawingSurfaceToCanvas(); } catch (e) {}
-                    canvas.classList.add('loaded');
-                  },
-                });
-              } catch (e) {}
-            },
-          });
-        } catch (e) {
-          // CDN 차단 등 — fallback img 그대로 노출
+        const canvas = document.getElementById('cat-canvas');
+        if (!canvas) return;
+
+        const mod = await importRive();
+        if (!mod) {
+          console.error('[Rive] no CDN reachable — fallback PNG visible');
+          return;
         }
+
+        // Layout 명시
+        const layout = new mod.Layout({
+          fit: mod.Fit?.Contain ?? 'contain',
+          alignment: mod.Alignment?.Center ?? 'center',
+        });
+
+        // 시도 순서:
+        // 1) Main SM + autoBind
+        // 2) State Machine 1 + autoBind
+        // 3) autoBind 만 (artboard/SM 기본)
+        // 4) 완전 기본 (단순 artboard autoplay)
+        const attempts = [
+          { src: '/rive/cat.riv', canvas, autoplay: true, autoBind: true, layout, stateMachines: 'Main' },
+          { src: '/rive/cat.riv', canvas, autoplay: true, autoBind: true, layout, stateMachines: 'State Machine 1' },
+          { src: '/rive/cat.riv', canvas, autoplay: true, autoBind: true, layout },
+          { src: '/rive/cat.riv', canvas, autoplay: true, layout },
+          // 마지막 — cat_idle.riv (16KB, 단순 idle) 시도
+          { src: '/rive/cat_idle.riv', canvas, autoplay: true, autoBind: true, layout },
+          { src: '/rive/cat_idle.riv', canvas, autoplay: true, layout },
+        ];
+
+        for (let i = 0; i < attempts.length; i++) {
+          const ok = await tryInit(mod, attempts[i]);
+          if (ok) {
+            canvas.classList.add('loaded');
+            console.log('[Rive] success on attempt', i + 1, attempts[i]);
+            return;
+          }
+        }
+        console.error('[Rive] all attempts failed — fallback PNG remains');
       }
+
       // hero 진입 시 로드
       const heroCat = document.querySelector('.hero-cat');
       if (heroCat && 'IntersectionObserver' in window) {
@@ -803,25 +858,45 @@ const LAST_UPDATED = '2026-06-01';
       .cat-stage {
         position: relative;
         width: 100%;
-        max-width: 480px;
+        max-width: 520px;
         aspect-ratio: 1;
+        /* 부드러운 spotlight — cat 아래 그림자 + glow */
+      }
+      .cat-stage::before {
+        content: '';
+        position: absolute;
+        inset: 8% 8% 4% 8%;
+        background: radial-gradient(circle at 50% 60%, rgba(36, 156, 227, 0.18) 0%, rgba(36, 156, 227, 0.06) 40%, transparent 70%);
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
       }
       #cat-canvas {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         opacity: 0;
         transition: opacity 0.4s;
+        z-index: 2;
       }
       #cat-canvas.loaded { opacity: 1; }
       .cat-fallback {
         position: absolute;
         inset: 0;
         margin: auto;
-        width: 70%;
-        height: auto;
+        width: 88%;
+        height: 88%;
         object-fit: contain;
         opacity: 1;
         transition: opacity 0.4s;
+        z-index: 1;
+        animation: catBob 4s ease-in-out infinite;
+        filter: drop-shadow(0 16px 32px rgba(36, 80, 130, 0.18));
+      }
+      @keyframes catBob {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
       }
       #cat-canvas.loaded ~ .cat-fallback { opacity: 0; }
       .cat-bubble {
