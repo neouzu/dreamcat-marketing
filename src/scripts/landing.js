@@ -239,19 +239,15 @@ function applyRandomOutfit(vm) {
   setVmNumber(vm, 'bagRightIndex', equip(0.25, 1, 4));
 }
 
-// 3초마다 슬롯 하나를 랜덤하게 다른 아이템으로 교체.
+// 2초마다 전체 의상 랜덤 풀세팅.
 let outfitTimerId = null;
 function startOutfitCycle(vm) {
   if (!vm) return;
   if (outfitTimerId) clearInterval(outfitTimerId);
   outfitTimerId = setInterval(() => {
     if (!vm) return;
-    // 랜덤 슬롯 선택
-    const slot = OUTFIT_SLOTS[Math.floor(Math.random() * OUTFIT_SLOTS.length)];
-    // 0 (벗기) 가능성도 약간 — 항상 입은 상태만 보이면 단조로움
-    const value = Math.random() < 0.15 ? 0 : randInt(slot.min, slot.max);
-    setVmNumber(vm, slot.name, value);
-  }, 3000);
+    applyRandomOutfit(vm);
+  }, 2000);
 }
 
 let riveLoaded = false;
