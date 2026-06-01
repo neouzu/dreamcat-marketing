@@ -138,8 +138,44 @@ onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
 // ───────── Rive (cat.riv) ─────────
-// 앱과 동일하게 'Main' SM + ViewModel Data Binding (autoBind: true) 사용.
+// 앱과 동일하게 'Main' SM + ViewModel Data Binding (autoBind: true).
+// + 랜덤 의상 적용 + 마우스 시선 추적 (eyeGazeX/Y).
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function setVmNumber(vm, name, value) {
+  if (!vm) return;
+  try {
+    const prop = vm.number(name);
+    if (prop) prop.value = value;
+  } catch (e) {
+    /* prop 없음 — 무시 */
+  }
+}
+
+function applyRandomOutfit(vm) {
+  if (!vm) return;
+  // 슬롯별 사용 가능 인덱스 (app 의 catItems.ts 기준).
+  // 0 = 없음. 일부 슬롯은 자주 안 노출되게 70% 확률로만 활성.
+  const equip = (chance, min, max) => (Math.random() < chance ? randInt(min, max) : 0);
+
+  setVmNumber(vm, 'topIndex', equip(0.85, 1, 6));      // 상의 1~6
+  setVmNumber(vm, 'bottomIndex', equip(0.85, 1, 8));   // 하의 1~8
+  setVmNumber(vm, 'hatIndex', equip(0.55, 1, 6));      // 모자 — 가끔만
+  setVmNumber(vm, 'glassesIndex', equip(0.4, 1, 4));   // 안경 — 가끔만
+  setVmNumber(vm, 'shoesIndex', equip(0.7, 1, 4));     // 신발
+  setVmNumber(vm, 'necklaceIndex', equip(0.3, 1, 3));  // 목걸이 — 가끔만
+  setVmNumber(vm, 'bagLeftIndex', equip(0.25, 1, 4));  // 왼쪽 가방
+  setVmNumber(vm, 'bagRightIndex', equip(0.25, 1, 4)); // 오른쪽 가방
+}
+
 let riveLoaded = false;
+let riveInstance = null;
+let riveVm = null;
+let lastMouse = { x: 0, y: 0 };
+let gazeRafId = null;
+
 function loadRive() {
   if (riveLoaded) return;
   riveLoaded = true;
@@ -158,9 +194,59 @@ function loadRive() {
         r.resizeDrawingSurfaceToCanvas();
       } catch (e) {}
       canvas.classList.add('loaded');
+      riveInstance = r;
+      // autoBind 로 자동 바인딩된 instance.
+      // @rive-app/canvas v2 API: r.viewModelInstance
+      try {
+        riveVm = r.viewModelInstance || null;
+      } catch (e) {
+        riveVm = null;
+      }
+      if (riveVm) {
+        applyRandomOutfit(riveVm);
+        startMouseGaze();
+      }
     },
-    // 로드 실패해도 fallback PNG 그대로 노출 — 별도 처리 불필요
   });
+}
+
+// ───────── 마우스 시선 추적 ─────────
+function startMouseGaze() {
+  const stage = document.querySelector('.hero-cat-stage');
+  if (!stage) return;
+
+  const onMove = (e) => {
+    lastMouse.x = e.clientX;
+    lastMouse.y = e.clientY;
+    if (gazeRafId == null) {
+      gazeRafId = requestAnimationFrame(updateGaze);
+    }
+  };
+
+  function updateGaze() {
+    gazeRafId = null;
+    if (!riveVm) return;
+    const rect = stage.getBoundingClientRect();
+    // 캐릭터 얼굴 중심 추정 — 스테이지의 중상단.
+    const faceCx = rect.left + rect.width * 0.5;
+    const faceCy = rect.top + rect.height * 0.42;
+    const dx = lastMouse.x - faceCx;
+    const dy = lastMouse.y - faceCy;
+    // 화면 전체 절반 거리를 1로 정규화 (멀리 있어도 부드럽게).
+    const norm = Math.max(window.innerWidth, window.innerHeight) * 0.5;
+    let gx = dx / norm;
+    let gy = dy / norm;
+    // -1 ~ 1 클램프.
+    gx = Math.max(-1, Math.min(1, gx));
+    gy = Math.max(-1, Math.min(1, gy));
+    setVmNumber(riveVm, 'eyeGazeX', gx);
+    setVmNumber(riveVm, 'eyeGazeY', gy);
+  }
+
+  window.addEventListener('mousemove', onMove, { passive: true });
+
+  // 터치 디바이스: pointer 도 캐치 (모바일 hover 안 됨)
+  window.addEventListener('pointermove', onMove, { passive: true });
 }
 
 // hero 영역 진입 시 lazy load
