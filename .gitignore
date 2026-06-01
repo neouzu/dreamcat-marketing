@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Stray EAS init artifact (marketing site is Astro static, no Expo)
 app.json
+
+# 원본 스토어 이미지 (PSD + 한글명 JPG) — public/screenshots/ 안의 변환본만 사용
+images/
