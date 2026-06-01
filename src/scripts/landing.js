@@ -227,16 +227,25 @@ const OUTFIT_SLOTS = [
 
 function applyRandomOutfit(vm) {
   if (!vm) return;
-  // 초기 풀세팅 — 슬롯별 확률로 입거나 비움.
   const equip = (chance, min, max) => (Math.random() < chance ? randInt(min, max) : 0);
-  setVmNumber(vm, 'topIndex', equip(0.85, 1, 6));
-  setVmNumber(vm, 'bottomIndex', equip(0.85, 1, 8));
+
+  // 상의/하의 — 무조건 입음 (안 입은 상태 금지).
+  // bottom 1~7 (bt08 잠옷 🌙 제외).
+  setVmNumber(vm, 'topIndex', randInt(1, 6));
+  setVmNumber(vm, 'bottomIndex', randInt(1, 7));
+
+  // 액세서리 — 확률적으로 착용
   setVmNumber(vm, 'hatIndex', equip(0.55, 1, 6));
   setVmNumber(vm, 'glassesIndex', equip(0.4, 1, 4));
   setVmNumber(vm, 'shoesIndex', equip(0.7, 1, 4));
   setVmNumber(vm, 'necklaceIndex', equip(0.3, 1, 3));
   setVmNumber(vm, 'bagLeftIndex', equip(0.25, 1, 4));
   setVmNumber(vm, 'bagRightIndex', equip(0.25, 1, 4));
+
+  // 명시적으로 끔 — 잠옷(원피스) / 의도 안 한 슬롯 누출 방지
+  setVmNumber(vm, 'onepieceIndex', 0);
+  setVmNumber(vm, 'glovesIndex', 0);
+  setVmNumber(vm, 'backIndex', 0);
 }
 
 // 2초마다 전체 의상 랜덤 풀세팅.
