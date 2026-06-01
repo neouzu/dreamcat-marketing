@@ -68,74 +68,60 @@ const LAST_UPDATED = '2026-06-01';
     </nav>
 
     <main id="top">
-      <!-- ─── Hero — Centered, Bold, Cinematic ─────── -->
+      <!-- ─── Hero — 좌우 split, 한 viewport 안에 완결 ─── -->
       <section class="hero">
         <div class="hero-bg" aria-hidden="true">
-          <div class="bg-gradient"></div>
-          <div class="bg-orb orb1"></div>
-          <div class="bg-orb orb2"></div>
-          <div class="bg-orb orb3"></div>
           <img src="/icons/cat_star_gold.png" class="hero-deco d1" alt="" />
-          <img src="/icons/cat_star_beige.png" class="hero-deco d2" alt="" />
+          <img src="/icons/paws.png" class="hero-deco d2" alt="" />
           <img src="/icons/coin.png" class="hero-deco d3" alt="" />
-          <img src="/icons/paws.png" class="hero-deco d4" alt="" />
-          <img src="/icons/cat_star_gold.png" class="hero-deco d5" alt="" />
+          <img src="/icons/cat_star_beige.png" class="hero-deco d4" alt="" />
         </div>
 
-        <div class="hero-content">
-          <span class="hero-brand" data-tr="hero.eyebrow">DreamCat</span>
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="hero-brand" data-tr="hero.eyebrow">DreamCat</span>
+            <h1 class="hero-headline">
+              <span class="hl-line" data-tr="hero.h1Top">꿈을 이루어 주는 고양이와</span>
+              <span class="hl-line accent" data-tr="hero.h1Highlight">함께하는 나의 하루</span>
+            </h1>
+            <p class="hero-sub" data-tr="hero.sub">큰 꿈을 오늘의 작은 한 걸음으로.<br/>매일 옆에서 응원하는 작은 친구.</p>
 
-          <h1 class="hero-headline">
-            <span class="hl-line" data-tr="hero.h1Top">꿈을 이루어 주는 고양이와</span>
-            <span class="hl-line accent" data-tr="hero.h1Highlight">함께하는 나의 하루</span>
-          </h1>
-
-          <p class="hero-sub" data-tr="hero.sub">큰 꿈을 오늘의 작은 한 걸음으로.<br/>매일 옆에서 응원하는 작은 친구.</p>
-
-          <div class="hero-cta">
-            <a class="store-btn store-ios" href={APP_STORE_URL} target="_blank" rel="noopener" aria-label="Download on the App Store">
-              <svg class="store-icon" viewBox="0 0 24 28" width="22" height="26" aria-hidden="true">
-                <path fill="currentColor" d="M19.36 14.86c-.04-3.78 3.08-5.6 3.22-5.69-1.76-2.57-4.5-2.93-5.46-2.96-2.32-.24-4.54 1.37-5.71 1.37-1.19 0-3.01-1.34-4.95-1.3-2.54.04-4.9 1.48-6.21 3.74-2.66 4.62-.68 11.4 1.91 15.13 1.29 1.83 2.82 3.88 4.83 3.81 1.94-.08 2.67-1.25 5.02-1.25 2.34 0 3.01 1.25 5.07 1.21 2.1-.04 3.42-1.86 4.69-3.7 1.49-2.12 2.1-4.18 2.14-4.29-.05-.02-4.1-1.57-4.14-6.23zM15.6 3.65c1.07-1.3 1.8-3.11 1.6-4.9-1.55.06-3.42 1.03-4.52 2.3-.99 1.13-1.86 2.97-1.63 4.74 1.73.13 3.47-.88 4.55-2.14z"/>
-              </svg>
-              <span class="store-text">
-                <span class="store-eyebrow">Download on the</span>
-                <span class="store-name" data-tr="hero.ctaPrimary">App Store</span>
+            <div class="hero-cta">
+              <a class="store-btn store-ios" href={APP_STORE_URL} target="_blank" rel="noopener" aria-label="Download on the App Store">
+                <svg class="store-icon" viewBox="0 0 24 28" width="22" height="26" aria-hidden="true">
+                  <path fill="currentColor" d="M19.36 14.86c-.04-3.78 3.08-5.6 3.22-5.69-1.76-2.57-4.5-2.93-5.46-2.96-2.32-.24-4.54 1.37-5.71 1.37-1.19 0-3.01-1.34-4.95-1.3-2.54.04-4.9 1.48-6.21 3.74-2.66 4.62-.68 11.4 1.91 15.13 1.29 1.83 2.82 3.88 4.83 3.81 1.94-.08 2.67-1.25 5.02-1.25 2.34 0 3.01 1.25 5.07 1.21 2.1-.04 3.42-1.86 4.69-3.7 1.49-2.12 2.1-4.18 2.14-4.29-.05-.02-4.1-1.57-4.14-6.23zM15.6 3.65c1.07-1.3 1.8-3.11 1.6-4.9-1.55.06-3.42 1.03-4.52 2.3-.99 1.13-1.86 2.97-1.63 4.74 1.73.13 3.47-.88 4.55-2.14z"/>
+                </svg>
+                <span class="store-text">
+                  <span class="store-eyebrow">Download on the</span>
+                  <span class="store-name" data-tr="hero.ctaPrimary">App Store</span>
+                </span>
+              </a>
+              <span class="store-btn store-android coming" aria-label="Coming soon to Google Play">
+                <svg class="store-icon" viewBox="0 0 24 26" width="22" height="24" aria-hidden="true">
+                  <path fill="currentColor" d="M3.61.97A1.99 1.99 0 0 0 2.5 2.75v20.5c0 .72.39 1.35.97 1.69L15.25 13 3.61.97zm12.7 11.27 3.1-3.04L5.97 1.55a2 2 0 0 0-1.5-.18l11.84 10.87zm5.36-1.13-3.74 2.15 3.7 3.62c1.08-.55 1.78-1.6 1.78-2.92 0-1.31-.69-2.36-1.74-2.85zM5.97 24.45a2 2 0 0 0 1.43-.13l14.27-8.13-3.1-3.04-12.6 11.3z"/>
+                </svg>
+                <span class="store-text">
+                  <span class="store-eyebrow" data-tr="hero.ctaSecondaryEyebrow">곧 출시</span>
+                  <span class="store-name" data-tr="hero.ctaSecondary">Google Play</span>
+                </span>
               </span>
-            </a>
+            </div>
 
-            <span class="store-btn store-android coming" aria-label="Coming soon to Google Play">
-              <svg class="store-icon" viewBox="0 0 24 26" width="22" height="24" aria-hidden="true">
-                <path fill="currentColor" d="M3.61.97A1.99 1.99 0 0 0 2.5 2.75v20.5c0 .72.39 1.35.97 1.69L15.25 13 3.61.97zm12.7 11.27 3.1-3.04L5.97 1.55a2 2 0 0 0-1.5-.18l11.84 10.87zm5.36-1.13-3.74 2.15 3.7 3.62c1.08-.55 1.78-1.6 1.78-2.92 0-1.31-.69-2.36-1.74-2.85zM5.97 24.45a2 2 0 0 0 1.43-.13l14.27-8.13-3.1-3.04-12.6 11.3z"/>
-              </svg>
-              <span class="store-text">
-                <span class="store-eyebrow" data-tr="hero.ctaSecondaryEyebrow">곧 출시</span>
-                <span class="store-name" data-tr="hero.ctaSecondary">Google Play</span>
-              </span>
-            </span>
+            <div class="hero-trust">
+              <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust1">9개 언어</span></span>
+              <span class="trust-sep">·</span>
+              <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust2">AI 코칭</span></span>
+              <span class="trust-sep">·</span>
+              <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust3">3일 무료 체험</span></span>
+            </div>
           </div>
 
-          <div class="hero-trust">
-            <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust1">9개 언어</span></span>
-            <span class="trust-sep">·</span>
-            <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust2">AI 코칭</span></span>
-            <span class="trust-sep">·</span>
-            <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust3">3일 무료 체험</span></span>
-          </div>
-
-          <!-- 거대 캐릭터 — Hero 의 중심 비주얼 -->
           <div class="hero-cat-stage">
             <div class="cat-pedestal" aria-hidden="true"></div>
             <canvas id="cat-canvas" width="900" height="900" aria-label="DreamCat animated cat character"></canvas>
             <img class="cat-fallback" src="/cat/cat_s5.png" alt="DreamCat character" />
           </div>
         </div>
-
-        <button class="scroll-cue" aria-label="Scroll" onclick="document.getElementById('pain')?.scrollIntoView({behavior:'smooth'})">
-          <svg width="14" height="20" viewBox="0 0 14 20" fill="none" aria-hidden="true">
-            <rect x="1" y="1" width="12" height="18" rx="6" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="7" cy="6" r="1.5" fill="currentColor"><animate attributeName="cy" values="6;13;6" dur="1.8s" repeatCount="indefinite"/></circle>
-          </svg>
-        </button>
       </section>
 
       <!-- ─── Pain Point ───────────────────────────── -->
@@ -535,13 +521,18 @@ const LAST_UPDATED = '2026-06-01';
         .navlinks { display: none; }
       }
 
-      /* ─── Hero — Centered, Bold, Cinematic ─── */
+      /* ─── Hero — 좌우 split, 한 viewport 안에 완결, 앱 톤(sky blue) ─── */
       .hero {
         position: relative;
         min-height: calc(100vh - 64px);
-        padding: 80px max(20px, 6vw) 0;
+        max-height: 920px;
+        display: flex;
+        align-items: center;
+        padding: 24px max(20px, 5vw);
         overflow: hidden;
-        text-align: center;
+        background:
+          radial-gradient(ellipse 70% 60% at 80% 50%, rgba(36, 156, 227, 0.12) 0%, transparent 65%),
+          linear-gradient(180deg, #f4faff 0%, #ebf5fd 100%);
       }
       .hero-bg {
         position: absolute;
@@ -549,121 +540,95 @@ const LAST_UPDATED = '2026-06-01';
         z-index: 0;
         pointer-events: none;
       }
-      .bg-gradient {
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(ellipse 60% 50% at 50% 35%, rgba(255, 233, 168, 0.55) 0%, transparent 60%),
-          radial-gradient(ellipse 80% 60% at 50% 80%, rgba(199, 232, 250, 0.7) 0%, transparent 65%),
-          linear-gradient(180deg, #fdfaf3 0%, #fff 35%, #f0f8ff 100%);
-      }
-      .bg-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(90px);
-      }
-      .orb1 { width: 480px; height: 480px; background: rgba(255, 217, 138, 0.4); top: -120px; left: -80px; }
-      .orb2 { width: 420px; height: 420px; background: rgba(199, 232, 250, 0.55); top: 8%; right: -80px; }
-      .orb3 { width: 380px; height: 380px; background: rgba(255, 214, 231, 0.35); bottom: -100px; left: 25%; }
-
       .hero-deco {
         position: absolute;
-        opacity: 0.85;
+        opacity: 0.65;
         animation: floaty 7s ease-in-out infinite;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
+        filter: drop-shadow(0 4px 8px rgba(36, 80, 130, 0.08));
       }
-      .hero .d1 { width: 42px; top: 18%; left: 10%; animation-delay: 0s; }
-      .hero .d2 { width: 32px; top: 32%; left: 18%; animation-delay: 1.2s; }
-      .hero .d3 { width: 28px; top: 68%; left: 7%; animation-delay: 2.4s; opacity: 0.7; }
-      .hero .d4 { width: 60px; top: 78%; right: 12%; animation-delay: 0.6s; opacity: 0.55; }
-      .hero .d5 { width: 36px; top: 24%; right: 9%; animation-delay: 1.8s; }
+      .hero .d1 { width: 36px; top: 14%; left: 6%; animation-delay: 0s; }
+      .hero .d2 { width: 48px; top: 22%; right: 48%; animation-delay: 0.6s; opacity: 0.4; }
+      .hero .d3 { width: 26px; top: 76%; left: 8%; animation-delay: 1.4s; }
+      .hero .d4 { width: 30px; top: 72%; left: 38%; animation-delay: 2.2s; opacity: 0.5; }
       @keyframes floaty {
         0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-14px) rotate(6deg); }
+        50% { transform: translateY(-12px) rotate(5deg); }
       }
 
-      .hero-content {
+      .hero-grid {
         position: relative;
         z-index: 1;
-        max-width: 980px;
+        max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 48px;
         align-items: center;
-        padding-bottom: 40px;
       }
 
+      .hero-text {
+        max-width: 580px;
+      }
       .hero-brand {
         display: inline-block;
-        font-family: 'Pretendard', sans-serif;
         font-weight: 900;
-        font-size: 14px;
-        letter-spacing: 0.18em;
+        font-size: 12px;
+        letter-spacing: 0.2em;
         color: var(--primary);
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        padding: 8px 18px;
+        background: #fff;
+        padding: 6px 14px;
         border-radius: 999px;
-        margin-bottom: 28px;
-        border: 1px solid rgba(36, 156, 227, 0.18);
+        margin-bottom: 22px;
+        box-shadow: 0 2px 10px rgba(36, 156, 227, 0.15);
       }
-
       .hero-headline {
-        font-family: 'Pretendard', sans-serif;
         font-weight: 900;
-        font-size: clamp(38px, 6.4vw, 76px);
-        line-height: 1.08;
+        font-size: clamp(32px, 4.4vw, 56px);
+        line-height: 1.1;
         letter-spacing: -0.025em;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
         color: var(--text);
       }
-      .hero-headline .hl-line {
-        display: block;
-      }
+      .hero-headline .hl-line { display: block; }
       .hero-headline .hl-line.accent {
-        background: linear-gradient(120deg, #249ce3 0%, #7a4ee0 50%, #f5b100 100%);
+        background: linear-gradient(120deg, #249ce3 0%, #1880c3 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        padding-bottom: 0.08em;
+        padding-bottom: 0.06em;
       }
-
       .hero-sub {
-        font-size: clamp(16px, 1.4vw, 19px);
+        font-size: clamp(15px, 1.2vw, 17px);
         color: var(--text-soft);
-        line-height: 1.7;
-        margin-bottom: 40px;
-        max-width: 560px;
+        line-height: 1.6;
+        margin-bottom: 28px;
       }
 
-      /* ── Store CTA buttons ── */
+      /* Store CTA */
       .hero-cta {
         display: flex;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
       }
       .store-btn {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         background: #1a1a1a;
         color: #fff;
         text-decoration: none;
-        padding: 12px 22px;
-        border-radius: 14px;
-        min-width: 188px;
-        transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        padding: 11px 18px;
+        border-radius: 12px;
+        transition: transform 0.18s, box-shadow 0.18s;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
       }
       a.store-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
       }
-      .store-btn .store-icon {
-        flex-shrink: 0;
-      }
+      .store-btn .store-icon { flex-shrink: 0; }
       .store-btn .store-text {
         display: flex;
         flex-direction: column;
@@ -678,13 +643,13 @@ const LAST_UPDATED = '2026-06-01';
         margin-bottom: 2px;
       }
       .store-btn .store-name {
-        font-size: 19px;
+        font-size: 17px;
         font-weight: 600;
         letter-spacing: -0.01em;
       }
       .store-btn.coming {
         background: #3a3a3a;
-        opacity: 0.6;
+        opacity: 0.55;
         cursor: not-allowed;
       }
       .store-btn.coming .store-eyebrow {
@@ -695,16 +660,14 @@ const LAST_UPDATED = '2026-06-01';
       .hero-trust {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 56px;
       }
       .trust-pill {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
         color: var(--text-soft);
       }
@@ -714,28 +677,25 @@ const LAST_UPDATED = '2026-06-01';
         background: var(--green);
         border-radius: 50%;
       }
-      .trust-sep {
-        color: var(--text-mute);
-        font-weight: 700;
-      }
+      .trust-sep { color: var(--text-mute); font-weight: 700; }
 
-      /* ── Cat stage — 거대 중심 비주얼 ── */
+      /* Cat stage */
       .hero-cat-stage {
         position: relative;
         width: 100%;
-        max-width: 640px;
+        max-width: 520px;
         aspect-ratio: 1;
         margin: 0 auto;
+        justify-self: end;
       }
       .cat-pedestal {
         position: absolute;
-        left: 8%;
-        right: 8%;
-        bottom: 8%;
-        height: 8%;
-        background: radial-gradient(ellipse at 50% 50%, rgba(36, 80, 130, 0.16) 0%, transparent 70%);
+        left: 12%;
+        right: 12%;
+        bottom: 6%;
+        height: 7%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(36, 80, 130, 0.18) 0%, transparent 70%);
         filter: blur(8px);
-        pointer-events: none;
       }
       #cat-canvas {
         position: absolute;
@@ -765,35 +725,27 @@ const LAST_UPDATED = '2026-06-01';
       }
       #cat-canvas.loaded ~ .cat-fallback { opacity: 0; }
 
-      .scroll-cue {
-        position: absolute;
-        bottom: 28px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: transparent;
-        border: 0;
-        color: var(--text-mute);
-        cursor: pointer;
-        padding: 8px;
-        transition: color 0.15s;
-        z-index: 3;
-      }
-      .scroll-cue:hover { color: var(--primary); }
-
-      @media (max-width: 880px) {
-        .hero { padding-top: 56px; }
-        .hero-headline { font-size: clamp(32px, 8vw, 48px); }
-        .hero-sub { font-size: 15px; }
-        .store-btn { min-width: 0; flex: 1 1 calc(50% - 6px); padding: 10px 16px; }
-        .store-btn .store-name { font-size: 16px; }
-        .hero-cat-stage { max-width: 380px; }
-        .scroll-cue { display: none; }
+      @media (max-width: 980px) {
+        .hero {
+          min-height: auto;
+          max-height: none;
+          padding: 40px max(20px, 5vw) 60px;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          text-align: center;
+        }
+        .hero-text { max-width: none; margin: 0 auto; }
+        .hero-cta { justify-content: center; }
+        .hero-trust { justify-content: center; }
+        .hero-cat-stage { justify-self: center; max-width: 380px; order: -1; }
+        .hero-headline { font-size: clamp(30px, 7vw, 44px); }
       }
       @media (max-width: 480px) {
         .hero-cta { flex-direction: column; gap: 10px; }
-        .store-btn { width: 100%; flex: 0 0 auto; }
+        .store-btn { width: 100%; justify-content: flex-start; }
         .trust-sep { display: none; }
-        .hero-trust { gap: 14px; }
       }
 
       /* ─── Section base ─── */
