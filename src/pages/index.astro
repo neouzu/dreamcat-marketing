@@ -68,60 +68,74 @@ const LAST_UPDATED = '2026-06-01';
     </nav>
 
     <main id="top">
-      <!-- ─── Hero ─────────────────────────────────── -->
+      <!-- ─── Hero — Centered, Bold, Cinematic ─────── -->
       <section class="hero">
         <div class="hero-bg" aria-hidden="true">
-          <div class="blob blob1"></div>
-          <div class="blob blob2"></div>
-          <div class="blob blob3"></div>
-          <img src="/icons/cat_star_gold.png" class="floater f1" alt="" />
-          <img src="/icons/cat_star_beige.png" class="floater f2" alt="" />
-          <img src="/icons/coin.png" class="floater f3" alt="" />
-          <img src="/icons/cat_star_gold.png" class="floater f4" alt="" />
-          <img src="/icons/paws.png" class="floater f5" alt="" />
+          <div class="bg-gradient"></div>
+          <div class="bg-orb orb1"></div>
+          <div class="bg-orb orb2"></div>
+          <div class="bg-orb orb3"></div>
+          <img src="/icons/cat_star_gold.png" class="hero-deco d1" alt="" />
+          <img src="/icons/cat_star_beige.png" class="hero-deco d2" alt="" />
+          <img src="/icons/coin.png" class="hero-deco d3" alt="" />
+          <img src="/icons/paws.png" class="hero-deco d4" alt="" />
+          <img src="/icons/cat_star_gold.png" class="hero-deco d5" alt="" />
         </div>
 
-        <div class="hero-inner">
-          <div class="hero-text">
-            <span class="eyebrow" data-tr="hero.eyebrow">귀여운 AI 고양이가 함께해요</span>
-            <h1>
-              <span data-tr="hero.h1Top">꿈을 이루는</span>
-              <br />
-              <span class="grad" data-tr="hero.h1Highlight">AI 고양이</span>
-            </h1>
-            <p class="hero-sub" data-tr="hero.sub">큰 꿈을 오늘 할 수 있는 한 걸음으로.<br/>매일 옆에서 응원하는 친구가 함께 자라요.</p>
+        <div class="hero-content">
+          <span class="hero-brand" data-tr="hero.eyebrow">DreamCat</span>
 
-            <div class="cta-row">
-              <a class="appstore-badge" href={APP_STORE_URL} target="_blank" rel="noopener" aria-label="Download on the App Store">
-                <svg viewBox="0 0 120 40" width="160" height="48" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="120" height="40" rx="8" fill="#000"/>
-                  <path d="M27.84 21.07c-.04-3.55 2.9-5.27 3.03-5.36-1.66-2.42-4.23-2.75-5.14-2.78-2.18-.22-4.27 1.28-5.37 1.28-1.12 0-2.83-1.26-4.66-1.22-2.38.03-4.6 1.4-5.84 3.51-2.5 4.33-.64 10.71 1.79 14.22 1.21 1.72 2.65 3.65 4.54 3.58 1.83-.07 2.52-1.18 4.73-1.18 2.19 0 2.84 1.18 4.76 1.13 1.97-.03 3.21-1.74 4.4-3.47 1.4-1.99 1.98-3.93 2.01-4.03-.04-.02-3.85-1.47-3.89-5.84zM24.06 10.5c1.01-1.22 1.69-2.92 1.51-4.6-1.45.06-3.21.97-4.25 2.17-.93 1.06-1.75 2.79-1.53 4.45 1.62.12 3.26-.82 4.27-2.02z" fill="#fff"/>
-                  <text x="42" y="17" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#fff">Download on the</text>
-                  <text x="42" y="32" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="600" fill="#fff">App Store</text>
-                </svg>
-              </a>
-              <a class="cta-link" href="#features" data-tr="hero.ctaSecondary">기능 보기 →</a>
-            </div>
+          <h1 class="hero-headline">
+            <span class="hl-line" data-tr="hero.h1Top">꿈을 이루어 주는 고양이와</span>
+            <span class="hl-line accent" data-tr="hero.h1Highlight">함께하는 나의 하루</span>
+          </h1>
 
-            <div class="trust-row">
-              <span class="trust"><span class="dot"></span><span data-tr="hero.trust1">9개 언어</span></span>
-              <span class="trust"><span class="dot"></span><span data-tr="hero.trust2">AI 코칭</span></span>
-              <span class="trust"><span class="dot"></span><span data-tr="hero.trust3">3일 무료 체험</span></span>
-            </div>
+          <p class="hero-sub" data-tr="hero.sub">큰 꿈을 오늘의 작은 한 걸음으로.<br/>매일 옆에서 응원하는 작은 친구.</p>
+
+          <div class="hero-cta">
+            <a class="store-btn store-ios" href={APP_STORE_URL} target="_blank" rel="noopener" aria-label="Download on the App Store">
+              <svg class="store-icon" viewBox="0 0 24 28" width="22" height="26" aria-hidden="true">
+                <path fill="currentColor" d="M19.36 14.86c-.04-3.78 3.08-5.6 3.22-5.69-1.76-2.57-4.5-2.93-5.46-2.96-2.32-.24-4.54 1.37-5.71 1.37-1.19 0-3.01-1.34-4.95-1.3-2.54.04-4.9 1.48-6.21 3.74-2.66 4.62-.68 11.4 1.91 15.13 1.29 1.83 2.82 3.88 4.83 3.81 1.94-.08 2.67-1.25 5.02-1.25 2.34 0 3.01 1.25 5.07 1.21 2.1-.04 3.42-1.86 4.69-3.7 1.49-2.12 2.1-4.18 2.14-4.29-.05-.02-4.1-1.57-4.14-6.23zM15.6 3.65c1.07-1.3 1.8-3.11 1.6-4.9-1.55.06-3.42 1.03-4.52 2.3-.99 1.13-1.86 2.97-1.63 4.74 1.73.13 3.47-.88 4.55-2.14z"/>
+              </svg>
+              <span class="store-text">
+                <span class="store-eyebrow">Download on the</span>
+                <span class="store-name" data-tr="hero.ctaPrimary">App Store</span>
+              </span>
+            </a>
+
+            <span class="store-btn store-android coming" aria-label="Coming soon to Google Play">
+              <svg class="store-icon" viewBox="0 0 24 26" width="22" height="24" aria-hidden="true">
+                <path fill="currentColor" d="M3.61.97A1.99 1.99 0 0 0 2.5 2.75v20.5c0 .72.39 1.35.97 1.69L15.25 13 3.61.97zm12.7 11.27 3.1-3.04L5.97 1.55a2 2 0 0 0-1.5-.18l11.84 10.87zm5.36-1.13-3.74 2.15 3.7 3.62c1.08-.55 1.78-1.6 1.78-2.92 0-1.31-.69-2.36-1.74-2.85zM5.97 24.45a2 2 0 0 0 1.43-.13l14.27-8.13-3.1-3.04-12.6 11.3z"/>
+              </svg>
+              <span class="store-text">
+                <span class="store-eyebrow" data-tr="hero.ctaSecondaryEyebrow">곧 출시</span>
+                <span class="store-name" data-tr="hero.ctaSecondary">Google Play</span>
+              </span>
+            </span>
           </div>
 
-          <div class="hero-cat">
-            <div class="cat-stage">
-              <canvas id="cat-canvas" width="800" height="800" aria-label="DreamCat animated cat character"></canvas>
-              <!-- Rive 로드 실패 시 fallback -->
-              <img class="cat-fallback" src="/cat/cat_s5.png" alt="DreamCat character" />
-            </div>
-            <div class="cat-bubble">
-              <span class="cat-bubble-emoji">✨</span>
-              <span data-tr="hero.eyebrow">귀여운 AI 고양이가 함께해요</span>
-            </div>
+          <div class="hero-trust">
+            <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust1">9개 언어</span></span>
+            <span class="trust-sep">·</span>
+            <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust2">AI 코칭</span></span>
+            <span class="trust-sep">·</span>
+            <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust3">3일 무료 체험</span></span>
+          </div>
+
+          <!-- 거대 캐릭터 — Hero 의 중심 비주얼 -->
+          <div class="hero-cat-stage">
+            <div class="cat-pedestal" aria-hidden="true"></div>
+            <canvas id="cat-canvas" width="900" height="900" aria-label="DreamCat animated cat character"></canvas>
+            <img class="cat-fallback" src="/cat/cat_s5.png" alt="DreamCat character" />
           </div>
         </div>
+
+        <button class="scroll-cue" aria-label="Scroll" onclick="document.getElementById('pain')?.scrollIntoView({behavior:'smooth'})">
+          <svg width="14" height="20" viewBox="0 0 14 20" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="12" height="18" rx="6" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="7" cy="6" r="1.5" fill="currentColor"><animate attributeName="cy" values="6;13;6" dur="1.8s" repeatCount="indefinite"/></circle>
+          </svg>
+        </button>
       </section>
 
       <!-- ─── Pain Point ───────────────────────────── -->
@@ -295,9 +309,26 @@ const LAST_UPDATED = '2026-06-01';
           <img src="/cat/cat_icon.png" class="final-cat" alt="DreamCat" />
           <h2 data-tr="finalCta.h2">오늘부터, 내 인생이 달라집니다</h2>
           <p data-tr="finalCta.sub">AI 고양이 코치와 함께 첫 걸음을 내딛으세요.</p>
-          <a class="appstore-badge big" href={APP_STORE_URL} target="_blank" rel="noopener">
-            <svg viewBox="0 0 120 40" width="200" height="60"><rect width="120" height="40" rx="8" fill="#000"/><path d="M27.84 21.07c-.04-3.55 2.9-5.27 3.03-5.36-1.66-2.42-4.23-2.75-5.14-2.78-2.18-.22-4.27 1.28-5.37 1.28-1.12 0-2.83-1.26-4.66-1.22-2.38.03-4.6 1.4-5.84 3.51-2.5 4.33-.64 10.71 1.79 14.22 1.21 1.72 2.65 3.65 4.54 3.58 1.83-.07 2.52-1.18 4.73-1.18 2.19 0 2.84 1.18 4.76 1.13 1.97-.03 3.21-1.74 4.4-3.47 1.4-1.99 1.98-3.93 2.01-4.03-.04-.02-3.85-1.47-3.89-5.84zM24.06 10.5c1.01-1.22 1.69-2.92 1.51-4.6-1.45.06-3.21.97-4.25 2.17-.93 1.06-1.75 2.79-1.53 4.45 1.62.12 3.26-.82 4.27-2.02z" fill="#fff"/><text x="42" y="17" font-family="system-ui,sans-serif" font-size="9" fill="#fff">Download on the</text><text x="42" y="32" font-family="system-ui,sans-serif" font-size="17" font-weight="600" fill="#fff">App Store</text></svg>
-          </a>
+          <div class="hero-cta final">
+            <a class="store-btn store-ios" href={APP_STORE_URL} target="_blank" rel="noopener" aria-label="Download on the App Store">
+              <svg class="store-icon" viewBox="0 0 24 28" width="24" height="28" aria-hidden="true">
+                <path fill="currentColor" d="M19.36 14.86c-.04-3.78 3.08-5.6 3.22-5.69-1.76-2.57-4.5-2.93-5.46-2.96-2.32-.24-4.54 1.37-5.71 1.37-1.19 0-3.01-1.34-4.95-1.3-2.54.04-4.9 1.48-6.21 3.74-2.66 4.62-.68 11.4 1.91 15.13 1.29 1.83 2.82 3.88 4.83 3.81 1.94-.08 2.67-1.25 5.02-1.25 2.34 0 3.01 1.25 5.07 1.21 2.1-.04 3.42-1.86 4.69-3.7 1.49-2.12 2.1-4.18 2.14-4.29-.05-.02-4.1-1.57-4.14-6.23zM15.6 3.65c1.07-1.3 1.8-3.11 1.6-4.9-1.55.06-3.42 1.03-4.52 2.3-.99 1.13-1.86 2.97-1.63 4.74 1.73.13 3.47-.88 4.55-2.14z"/>
+              </svg>
+              <span class="store-text">
+                <span class="store-eyebrow">Download on the</span>
+                <span class="store-name" data-tr="hero.ctaPrimary">App Store</span>
+              </span>
+            </a>
+            <span class="store-btn store-android coming" aria-label="Coming soon to Google Play">
+              <svg class="store-icon" viewBox="0 0 24 26" width="24" height="26" aria-hidden="true">
+                <path fill="currentColor" d="M3.61.97A1.99 1.99 0 0 0 2.5 2.75v20.5c0 .72.39 1.35.97 1.69L15.25 13 3.61.97zm12.7 11.27 3.1-3.04L5.97 1.55a2 2 0 0 0-1.5-.18l11.84 10.87zm5.36-1.13-3.74 2.15 3.7 3.62c1.08-.55 1.78-1.6 1.78-2.92 0-1.31-.69-2.36-1.74-2.85zM5.97 24.45a2 2 0 0 0 1.43-.13l14.27-8.13-3.1-3.04-12.6 11.3z"/>
+              </svg>
+              <span class="store-text">
+                <span class="store-eyebrow" data-tr="hero.ctaSecondaryEyebrow">곧 출시</span>
+                <span class="store-name" data-tr="hero.ctaSecondary">Google Play</span>
+              </span>
+            </span>
+          </div>
         </div>
       </section>
 
@@ -504,134 +535,206 @@ const LAST_UPDATED = '2026-06-01';
         .navlinks { display: none; }
       }
 
-      /* ─── Hero ─── */
+      /* ─── Hero — Centered, Bold, Cinematic ─── */
       .hero {
         position: relative;
-        padding: 60px max(20px, 6vw) 120px;
+        min-height: calc(100vh - 64px);
+        padding: 80px max(20px, 6vw) 0;
         overflow: hidden;
+        text-align: center;
       }
       .hero-bg {
         position: absolute;
         inset: 0;
         z-index: 0;
+        pointer-events: none;
       }
-      .blob {
+      .bg-gradient {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 60% 50% at 50% 35%, rgba(255, 233, 168, 0.55) 0%, transparent 60%),
+          radial-gradient(ellipse 80% 60% at 50% 80%, rgba(199, 232, 250, 0.7) 0%, transparent 65%),
+          linear-gradient(180deg, #fdfaf3 0%, #fff 35%, #f0f8ff 100%);
+      }
+      .bg-orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.5;
+        filter: blur(90px);
       }
-      .blob1 { width: 500px; height: 500px; background: var(--primary-soft); top: -100px; left: -100px; }
-      .blob2 { width: 400px; height: 400px; background: var(--gold-soft); top: 100px; right: -80px; }
-      .blob3 { width: 350px; height: 350px; background: #ffd6e7; bottom: -100px; left: 30%; opacity: 0.4; }
-      .floater {
+      .orb1 { width: 480px; height: 480px; background: rgba(255, 217, 138, 0.4); top: -120px; left: -80px; }
+      .orb2 { width: 420px; height: 420px; background: rgba(199, 232, 250, 0.55); top: 8%; right: -80px; }
+      .orb3 { width: 380px; height: 380px; background: rgba(255, 214, 231, 0.35); bottom: -100px; left: 25%; }
+
+      .hero-deco {
         position: absolute;
         opacity: 0.85;
-        animation: float 6s ease-in-out infinite;
+        animation: floaty 7s ease-in-out infinite;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
       }
-      .hero .f1 { width: 48px; top: 20%; left: 8%; animation-delay: 0s; }
-      .hero .f2 { width: 38px; top: 60%; left: 14%; animation-delay: 1s; }
-      .hero .f3 { width: 32px; top: 75%; left: 6%; animation-delay: 2s; }
-      .hero .f4 { width: 42px; top: 28%; right: 8%; animation-delay: 0.5s; }
-      .hero .f5 { width: 56px; top: 70%; right: 10%; animation-delay: 1.5s; opacity: 0.6; }
-      @keyframes float {
+      .hero .d1 { width: 42px; top: 18%; left: 10%; animation-delay: 0s; }
+      .hero .d2 { width: 32px; top: 32%; left: 18%; animation-delay: 1.2s; }
+      .hero .d3 { width: 28px; top: 68%; left: 7%; animation-delay: 2.4s; opacity: 0.7; }
+      .hero .d4 { width: 60px; top: 78%; right: 12%; animation-delay: 0.6s; opacity: 0.55; }
+      .hero .d5 { width: 36px; top: 24%; right: 9%; animation-delay: 1.8s; }
+      @keyframes floaty {
         0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-18px) rotate(8deg); }
+        50% { transform: translateY(-14px) rotate(6deg); }
       }
 
-      .hero-inner {
+      .hero-content {
         position: relative;
         z-index: 1;
-        max-width: 1200px;
+        max-width: 980px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.05fr 1fr;
-        gap: 60px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        padding-bottom: 40px;
       }
-      .hero-text { padding-top: 40px; }
-      .hero h1 {
-        font-size: clamp(40px, 6vw, 72px);
+
+      .hero-brand {
+        display: inline-block;
+        font-family: 'Pretendard', sans-serif;
         font-weight: 900;
-        margin-bottom: 24px;
+        font-size: 14px;
+        letter-spacing: 0.18em;
+        color: var(--primary);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 8px 18px;
+        border-radius: 999px;
+        margin-bottom: 28px;
+        border: 1px solid rgba(36, 156, 227, 0.18);
       }
-      .grad {
-        background: linear-gradient(135deg, var(--primary) 0%, #7a4ee0 100%);
+
+      .hero-headline {
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 900;
+        font-size: clamp(38px, 6.4vw, 76px);
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+        margin-bottom: 28px;
+        color: var(--text);
+      }
+      .hero-headline .hl-line {
+        display: block;
+      }
+      .hero-headline .hl-line.accent {
+        background: linear-gradient(120deg, #249ce3 0%, #7a4ee0 50%, #f5b100 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        padding-bottom: 0.08em;
       }
-      .hero-sub {
-        font-size: 18px;
-        color: var(--text-soft);
-        margin-bottom: 36px;
-        max-width: 480px;
-      }
-      .cta-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 28px;
-      }
-      .appstore-badge {
-        display: inline-block;
-        line-height: 0;
-        border-radius: 10px;
-        transition: transform 0.18s, box-shadow 0.18s;
-      }
-      .appstore-badge:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      }
-      .cta-link {
-        font-weight: 700;
-        font-size: 15px;
-        color: var(--primary);
-      }
-      .cta-link:hover { color: var(--primary-deep); }
 
-      .trust-row {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 12px;
+      .hero-sub {
+        font-size: clamp(16px, 1.4vw, 19px);
+        color: var(--text-soft);
+        line-height: 1.7;
+        margin-bottom: 40px;
+        max-width: 560px;
       }
-      .trust {
+
+      /* ── Store CTA buttons ── */
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+      .store-btn {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 12px;
+        background: #1a1a1a;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 22px;
+        border-radius: 14px;
+        min-width: 188px;
+        transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      }
+      a.store-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+      }
+      .store-btn .store-icon {
+        flex-shrink: 0;
+      }
+      .store-btn .store-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.1;
+      }
+      .store-btn .store-eyebrow {
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.85;
+        letter-spacing: 0.04em;
+        margin-bottom: 2px;
+      }
+      .store-btn .store-name {
+        font-size: 19px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .store-btn.coming {
+        background: #3a3a3a;
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .store-btn.coming .store-eyebrow {
+        color: var(--gold-soft);
+        opacity: 1;
+      }
+
+      .hero-trust {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 56px;
+      }
+      .trust-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         font-size: 13px;
         font-weight: 600;
         color: var(--text-soft);
       }
-      .trust .dot {
-        width: 6px;
-        height: 6px;
+      .trust-dot {
+        width: 5px;
+        height: 5px;
         background: var(--green);
         border-radius: 50%;
       }
-
-      .hero-cat {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .trust-sep {
+        color: var(--text-mute);
+        font-weight: 700;
       }
-      .cat-stage {
+
+      /* ── Cat stage — 거대 중심 비주얼 ── */
+      .hero-cat-stage {
         position: relative;
         width: 100%;
-        max-width: 520px;
+        max-width: 640px;
         aspect-ratio: 1;
-        /* 부드러운 spotlight — cat 아래 그림자 + glow */
+        margin: 0 auto;
       }
-      .cat-stage::before {
-        content: '';
+      .cat-pedestal {
         position: absolute;
-        inset: 8% 8% 4% 8%;
-        background: radial-gradient(circle at 50% 60%, rgba(36, 156, 227, 0.18) 0%, rgba(36, 156, 227, 0.06) 40%, transparent 70%);
-        border-radius: 50%;
-        z-index: 0;
+        left: 8%;
+        right: 8%;
+        bottom: 8%;
+        height: 8%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(36, 80, 130, 0.16) 0%, transparent 70%);
+        filter: blur(8px);
         pointer-events: none;
       }
       #cat-canvas {
@@ -640,7 +743,7 @@ const LAST_UPDATED = '2026-06-01';
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: opacity 0.4s;
+        transition: opacity 0.5s;
         z-index: 2;
       }
       #cat-canvas.loaded { opacity: 1; }
@@ -652,41 +755,45 @@ const LAST_UPDATED = '2026-06-01';
         height: 88%;
         object-fit: contain;
         opacity: 1;
-        transition: opacity 0.4s;
+        transition: opacity 0.5s;
         z-index: 1;
         animation: catBob 4s ease-in-out infinite;
-        filter: drop-shadow(0 16px 32px rgba(36, 80, 130, 0.18));
       }
       @keyframes catBob {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        50% { transform: translateY(-10px); }
       }
       #cat-canvas.loaded ~ .cat-fallback { opacity: 0; }
-      .cat-bubble {
+
+      .scroll-cue {
         position: absolute;
-        top: 8%;
-        right: 0;
-        background: #fff;
-        padding: 10px 16px;
-        border-radius: 20px;
-        box-shadow: var(--shadow-card);
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--text);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        animation: float 5s ease-in-out infinite;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        border: 0;
+        color: var(--text-mute);
+        cursor: pointer;
+        padding: 8px;
+        transition: color 0.15s;
+        z-index: 3;
       }
+      .scroll-cue:hover { color: var(--primary); }
 
       @media (max-width: 880px) {
-        .hero-inner { grid-template-columns: 1fr; gap: 30px; }
-        .hero-text { text-align: center; padding-top: 0; }
-        .hero-sub { margin-left: auto; margin-right: auto; }
-        .cta-row { justify-content: center; }
-        .trust-row { justify-content: center; }
-        .cat-stage { max-width: 360px; }
-        .cat-bubble { right: 8%; }
+        .hero { padding-top: 56px; }
+        .hero-headline { font-size: clamp(32px, 8vw, 48px); }
+        .hero-sub { font-size: 15px; }
+        .store-btn { min-width: 0; flex: 1 1 calc(50% - 6px); padding: 10px 16px; }
+        .store-btn .store-name { font-size: 16px; }
+        .hero-cat-stage { max-width: 380px; }
+        .scroll-cue { display: none; }
+      }
+      @media (max-width: 480px) {
+        .hero-cta { flex-direction: column; gap: 10px; }
+        .store-btn { width: 100%; flex: 0 0 auto; }
+        .trust-sep { display: none; }
+        .hero-trust { gap: 14px; }
       }
 
       /* ─── Section base ─── */
@@ -1150,10 +1257,7 @@ const LAST_UPDATED = '2026-06-01';
         color: var(--text-soft);
         margin-bottom: 36px;
       }
-      .appstore-badge.big {
-        display: inline-block;
-        border-radius: 12px;
-      }
+      .hero-cta.final { justify-content: center; margin: 8px 0 0; }
 
       /* ─── Footer ─── */
       footer {
