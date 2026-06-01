@@ -84,7 +84,6 @@ const LAST_UPDATED = '2026-06-01';
 
         <div class="hero-grid">
           <div class="hero-text">
-            <span class="hero-brand" data-tr="hero.eyebrow">DreamCat</span>
             <h1 class="hero-headline">
               <span class="hl-line" data-tr="hero.h1Top">꿈을 이루어 주는 고양이와</span>
               <span class="hl-line accent" data-tr="hero.h1Highlight">함께하는 나의 하루</span>
@@ -112,13 +111,6 @@ const LAST_UPDATED = '2026-06-01';
               </span>
             </div>
 
-            <div class="hero-trust">
-              <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust1">9개 언어</span></span>
-              <span class="trust-sep">·</span>
-              <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust2">AI 코칭</span></span>
-              <span class="trust-sep">·</span>
-              <span class="trust-pill"><span class="trust-dot"></span><span data-tr="hero.trust3">3일 무료 체험</span></span>
-            </div>
           </div>
 
           <div class="hero-cat-stage">
@@ -526,36 +518,34 @@ const LAST_UPDATED = '2026-06-01';
         .navlinks { display: none; }
       }
 
-      /* ─── Hero — 좌우 split + 고정 높이 + sky blue + 랜덤 배경 이미지 ─── */
+      /* ─── Hero — 좌우 split + 컴팩트 고정 높이 + 진한 sky blue + 랜덤 배경 ─── */
       .hero {
         position: relative;
-        height: 640px;
+        height: 540px;
         display: flex;
         align-items: center;
         padding: 0 max(20px, 5vw);
         overflow: hidden;
-        background:
-          linear-gradient(180deg, #4fb8e8 0%, #6cc7eb 100%);
+        background: linear-gradient(180deg, #1f8fc8 0%, #2ba0d8 50%, #3ab1e3 100%);
       }
-      /* 랜덤 배경 이미지 — 낮은 투명도로 깔림, JS 가 background-image 지정. */
+      /* 랜덤 배경 이미지 — 낮은 투명도로 깔림 */
       .hero-bg-image {
         position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center;
-        opacity: 0.22;
+        opacity: 0.18;
         mix-blend-mode: luminosity;
         transition: opacity 0.6s ease;
       }
-      /* 가독성 향상용 부드러운 오버레이 — sky blue 톤 강조 */
+      /* 가독성 향상용 부드러운 오버레이 */
       .hero::before {
         content: '';
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(ellipse 60% 70% at 25% 50%, rgba(36, 156, 227, 0.35) 0%, transparent 65%),
-          radial-gradient(ellipse 50% 60% at 78% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 60%),
-          linear-gradient(180deg, rgba(79, 184, 232, 0.25) 0%, rgba(108, 199, 235, 0.35) 100%);
+          radial-gradient(ellipse 60% 70% at 25% 50%, rgba(20, 110, 165, 0.4) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 60% at 78% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
         z-index: 0;
         pointer-events: none;
       }
@@ -598,18 +588,6 @@ const LAST_UPDATED = '2026-06-01';
       .hero-text {
         max-width: 720px;
       }
-      .hero-brand {
-        display: inline-block;
-        font-weight: 900;
-        font-size: 12px;
-        letter-spacing: 0.2em;
-        color: var(--primary);
-        background: #fff;
-        padding: 7px 16px;
-        border-radius: 999px;
-        margin-bottom: 24px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-      }
       .hero-headline {
         font-weight: 900;
         font-size: clamp(30px, 3.8vw, 52px);
@@ -642,7 +620,7 @@ const LAST_UPDATED = '2026-06-01';
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
-        margin-bottom: 20px;
+        margin-bottom: 0;
       }
       .store-btn {
         display: inline-flex;
@@ -688,30 +666,6 @@ const LAST_UPDATED = '2026-06-01';
         color: var(--gold-soft);
         opacity: 1;
       }
-
-      .hero-trust {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-      .trust-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.92);
-        text-shadow: 0 1px 4px rgba(20, 80, 130, 0.25);
-      }
-      .trust-dot {
-        width: 6px;
-        height: 6px;
-        background: #aaf3bf;
-        border-radius: 50%;
-        box-shadow: 0 0 8px rgba(170, 243, 191, 0.6);
-      }
-      .trust-sep { color: rgba(255, 255, 255, 0.5); font-weight: 700; }
 
       /* Cat stage */
       .hero-cat-stage {
@@ -772,17 +726,16 @@ const LAST_UPDATED = '2026-06-01';
         .hero {
           height: auto;
           min-height: 0;
-          padding: 32px max(20px, 5vw) 48px;
+          padding: 28px max(20px, 5vw) 40px;
         }
         .hero-grid {
           grid-template-columns: 1fr;
-          gap: 24px;
+          gap: 20px;
           text-align: center;
         }
         .hero-text { max-width: none; margin: 0 auto; }
         .hero-cta { justify-content: center; }
-        .hero-trust { justify-content: center; }
-        .hero-cat-stage { justify-self: center; max-width: 320px; order: -1; }
+        .hero-cat-stage { justify-self: center; max-width: 280px; order: -1; }
         .hero-headline { font-size: clamp(24px, 6vw, 36px); }
         .hero-headline .hl-line { white-space: normal; }
       }
