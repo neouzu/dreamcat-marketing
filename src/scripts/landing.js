@@ -282,6 +282,60 @@ function startOutfitCycle(vm) {
   }, 2000);
 }
 
+// ───────── 표정 idle 루프 (앱 useCatAnimator 와 동일 패턴) ─────────
+// cat.riv VM: eyeShapeIndex (0~7) / mouthIndex (0~7) / blushOn (0|1)
+// 0:default 1:happy 2:blink 3:winkL 4:winkR 5:surprised 6:sad 7:sleepy (eye)
+// 0:default 1:smile 2:open 3:yawn 4:pout 5:talkClosed 6:talkSmall 7:talkWide (mouth)
+const IDLE_EXPRESSIONS = [
+  // blink ×10 (가장 자주, 짧게)
+  { eye: 2, mouth: 0, blush: 0, durationMs: 180 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 160 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 200 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 170 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 190 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 175 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 185 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 165 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 195 },
+  { eye: 2, mouth: 0, blush: 0, durationMs: 178 },
+  // 일반 표정
+  { eye: 1, mouth: 1, blush: 0, durationMs: 2000 }, // happy + smile
+  { eye: 1, mouth: 2, blush: 1, durationMs: 1800 }, // happy + open + blush
+  { eye: 3, mouth: 1, blush: 0, durationMs: 200 },  // winkL + smile
+  { eye: 4, mouth: 1, blush: 1, durationMs: 200 },  // winkR + smile + blush
+  { eye: 7, mouth: 3, blush: 0, durationMs: 2000 }, // sleepy + yawn
+  { eye: 0, mouth: 4, blush: 0, durationMs: 2000 }, // pout
+  { eye: 0, mouth: 5, blush: 0, durationMs: 2000 }, // talkClosed
+  { eye: 0, mouth: 6, blush: 0, durationMs: 2000 }, // talkSmall
+  { eye: 0, mouth: 1, blush: 0, durationMs: 2000 }, // default + smile
+];
+
+function applyExpression(vm, eye, mouth, blush) {
+  setVmNumber(vm, 'eyeShapeIndex', eye);
+  setVmNumber(vm, 'mouthIndex', mouth);
+  setVmNumber(vm, 'blushOn', blush);
+}
+
+let expressionTimerId = null;
+function startExpressionCycle(vm) {
+  if (!vm) return;
+  if (expressionTimerId) clearTimeout(expressionTimerId);
+  const loop = () => {
+    const gapMs = 3000 + Math.random() * 2000; // 3~5초 간격
+    expressionTimerId = setTimeout(() => {
+      if (!vm) return;
+      const e = IDLE_EXPRESSIONS[Math.floor(Math.random() * IDLE_EXPRESSIONS.length)];
+      applyExpression(vm, e.eye, e.mouth, e.blush);
+      expressionTimerId = setTimeout(() => {
+        if (!vm) return;
+        applyExpression(vm, 0, 0, 0); // 원상복귀
+        loop();
+      }, e.durationMs);
+    }, gapMs);
+  };
+  loop();
+}
+
 let riveLoaded = false;
 let riveInstance = null;
 let riveVm = null;
@@ -317,6 +371,7 @@ function loadRive() {
       if (riveVm) {
         applyRandomOutfit(riveVm);
         startOutfitCycle(riveVm);
+        startExpressionCycle(riveVm);
         startMouseGaze();
       }
     },
