@@ -32,7 +32,7 @@ export const I18N = {
     },
     steps: {
       eyebrow: '이렇게 도와요',
-      h2: '꿈에서 오늘의 한 걸음까지',
+      h2: '큰 꿈에서, 오늘 할 일까지',
       items: [
         {
           tag: 'STEP 1',
