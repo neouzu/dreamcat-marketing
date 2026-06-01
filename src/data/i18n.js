@@ -63,7 +63,7 @@ export const I18N = {
       h2: '하루를 함께 보내는 작은 도구들',
       items: [
         { icon: 'btn_diary', title: '고양이 일기', body: '오늘 일기를 쓰면, 고양이가 지난 7일을 돌아보고 짧은 답장을 남겨요.' },
-        { icon: 'btn_alarm', title: '아침 알람', body: '고양이 울음소리로 다정하게 깨워주는 아침.' },
+        { icon: 'btn_alarm', title: '아침 알람', body: '다정한 소리로 깨워주는 아침.' },
         { icon: 'btn_timer', title: '집중 타이머', body: '뽀모도로와 빗소리·재즈·카페 사운드로, 집중하는 시간.' },
         { icon: 'btn_sleep', title: '자장가', body: '잠들기 전, 마음을 가라앉히는 ASMR 한 곡.' },
         { icon: 'btn_breath', title: '호흡 가이드', body: '4-7-8, 박스 호흡으로 한숨 돌리는 시간.' },
