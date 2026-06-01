@@ -47,9 +47,8 @@ const LAST_UPDATED = '2026-06-01';
         <span>DreamCat</span>
       </a>
       <ul class="navlinks">
-        <li><a href="#how" data-tr="nav.how">작동 방식</a></li>
-        <li><a href="#features" data-tr="nav.features">기능</a></li>
-        <li><a href="#pricing" data-tr="nav.pricing">가격</a></li>
+        <li><a href="#how" data-tr="nav.how">이야기</a></li>
+        <li><a href="#features" data-tr="nav.features">둘러보기</a></li>
       </ul>
       <div class="nav-right">
         <div class="lang-pop" data-popup="lang">
@@ -227,49 +226,6 @@ const LAST_UPDATED = '2026-06-01';
         <div class="ipad-shots">
           <div class="ipad-frame" data-shot-key="ipad_home"><img alt="iPad home" /></div>
           <div class="ipad-frame ipad-back" data-shot-key="ipad_dream"><img alt="iPad dream" /></div>
-        </div>
-      </section>
-
-      <!-- ─── Pricing ──────────────────────────────── -->
-      <section class="section pricing reveal" id="pricing">
-        <span class="eyebrow center" data-tr="pricing.eyebrow">내 페이스대로</span>
-        <h2 class="center" data-tr="pricing.h2">무료로도 충분해요</h2>
-
-        <div class="pricing-grid">
-          <div class="price-card">
-            <div class="price-head">
-              <span class="price-name" data-tr="pricing.free.name">무료</span>
-              <div class="price-line">
-                <span class="price-num" data-tr="pricing.free.price">₩0</span>
-                <span class="price-period" data-tr="pricing.free.period">영원히</span>
-              </div>
-            </div>
-            <ul class="price-items">
-              {[0,1,2,3,4].map((i) => (
-                <li><span class="check">✓</span><span data-tr={`pricing.free.items.${i}`}></span></li>
-              ))}
-            </ul>
-            <a class="price-cta secondary" href={APP_STORE_URL} target="_blank" rel="noopener" data-tr="pricing.free.cta">무료로 시작</a>
-          </div>
-
-          <div class="price-card pro">
-            <span class="pro-badge" data-tr="pricing.pro.badge">인기</span>
-            <div class="price-head">
-              <span class="price-name" data-tr="pricing.pro.name">프로</span>
-              <div class="price-line">
-                <span class="price-num" data-tr="pricing.pro.price">₩3,900</span>
-                <span class="price-period" data-tr="pricing.pro.period">/월</span>
-              </div>
-              <span class="price-note" data-tr="pricing.pro.priceNote">3일 무료 체험</span>
-            </div>
-            <ul class="price-items">
-              {[0,1,2,3,4].map((i) => (
-                <li><span class="check gold">✓</span><span data-tr={`pricing.pro.items.${i}`}></span></li>
-              ))}
-            </ul>
-            <a class="price-cta primary" href={APP_STORE_URL} target="_blank" rel="noopener" data-tr="pricing.pro.cta">3일 무료 체험</a>
-            <p class="price-foot" data-tr="pricing.pro.annual">연 ₩29,000 / 평생 ₩59,000</p>
-          </div>
         </div>
       </section>
 

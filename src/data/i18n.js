@@ -6,7 +6,7 @@ export const I18N = {
     htmlLang: 'ko',
     title: '드림캣: AI 목표 코치·루틴 플래너',
     metaDesc: '꿈을 이루는 AI 고양이. AI 가 큰 꿈을 오늘 할 수 있는 한 걸음으로 쪼개주는 목표 달성 앱.',
-    nav: { features: '기능', how: '작동 방식', pricing: '가격', faq: 'FAQ', cta: '다운로드' },
+    nav: { features: '둘러보기', how: '이야기', pricing: '가격', faq: 'FAQ', cta: '다운로드' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '꿈을 이루어 주는 고양이와',
@@ -147,7 +147,7 @@ export const I18N = {
     htmlLang: 'en',
     title: 'DreamCat: AI Goal Coach & Planner',
     metaDesc: 'An AI cat that helps you achieve your dreams. Break big dreams into one doable step for today.',
-    nav: { features: 'Features', how: 'How', pricing: 'Pricing', faq: 'FAQ', cta: 'Download' },
+    nav: { features: 'Explore', how: 'Story', pricing: 'Pricing', faq: 'FAQ', cta: 'Download' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: 'Every day with a cat',
@@ -288,7 +288,7 @@ export const I18N = {
     htmlLang: 'ja',
     title: 'DreamCat — AI目標コーチ・プランナー',
     metaDesc: '夢を叶えるAI猫。大きな夢を今日できる一歩に変えてくれる目標達成アプリ。',
-    nav: { features: '機能', how: '仕組み', pricing: '価格', faq: 'FAQ', cta: 'ダウンロード' },
+    nav: { features: 'のぞいてみる', how: 'ストーリー', pricing: '価格', faq: 'FAQ', cta: 'ダウンロード' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '夢をかなえる猫と、',
@@ -429,7 +429,7 @@ export const I18N = {
     htmlLang: 'zh-Hant',
     title: 'DreamCat — AI 目標教練·習慣規劃',
     metaDesc: '陪你實現夢想的 AI 貓教練。把大夢想拆成今天能做的一小步。',
-    nav: { features: '功能', how: '運作方式', pricing: '價格', faq: 'FAQ', cta: '下載' },
+    nav: { features: '看看', how: '故事', pricing: '價格', faq: 'FAQ', cta: '下載' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '陪你實現夢想的貓,',
