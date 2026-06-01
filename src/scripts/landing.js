@@ -7,7 +7,9 @@ import { Rive, Layout, Fit, Alignment } from '@rive-app/canvas';
 // ───────── i18n ─────────
 const dataEl = document.getElementById('i18n-data');
 const I18N = dataEl ? JSON.parse(dataEl.textContent) : {};
-const SUPPORTED = ['ko', 'en', 'ja', 'zh-TW'];
+const SUPPORTED = ['ko', 'en', 'ja', 'zh-CN', 'zh-TW', 'es', 'pt-BR', 'de', 'fr'];
+// 스크린샷이 존재하는 언어 — 나머지는 'en' 폴더로 fallback.
+const SHOT_LANGS = new Set(['ko', 'en', 'ja', 'zh-TW']);
 
 function detectLang() {
   const url = new URLSearchParams(location.search);
@@ -24,7 +26,12 @@ function detectLang() {
     if (l.startsWith('ja')) return 'ja';
     if (l.startsWith('zh')) {
       if (l.includes('hant') || l.includes('tw') || l.includes('hk') || l.includes('mo')) return 'zh-TW';
+      return 'zh-CN';
     }
+    if (l.startsWith('es')) return 'es';
+    if (l.startsWith('pt')) return 'pt-BR';
+    if (l.startsWith('de')) return 'de';
+    if (l.startsWith('fr')) return 'fr';
     if (l.startsWith('en')) return 'en';
   }
   return 'en';
@@ -56,16 +63,28 @@ function applyLang(lang) {
   const heroSub = document.querySelector('[data-tr="hero.sub"]');
   if (heroSub && D.hero?.sub) heroSub.innerHTML = D.hero.sub.replace(/\n/g, '<br/>');
 
-  const labels = { ko: '한국어', en: 'English', ja: '日本語', 'zh-TW': '繁體中文' };
+  const labels = {
+    ko: '한국어',
+    en: 'English',
+    ja: '日本語',
+    'zh-CN': '简体中文',
+    'zh-TW': '繁體中文',
+    es: 'Español',
+    'pt-BR': 'Português',
+    de: 'Deutsch',
+    fr: 'Français',
+  };
   document.querySelectorAll('[data-active-lang]').forEach((el) => {
-    el.textContent = labels[lang];
+    el.textContent = labels[lang] || lang;
   });
 
+  // 스크린샷 — 4개 언어 (ko/en/ja/zh-TW) 만 실제 있고, 나머지는 en 폴더로 fallback
+  const shotLang = SHOT_LANGS.has(lang) ? lang : 'en';
   document.querySelectorAll('[data-shot-key]').forEach((el) => {
     const key = el.getAttribute('data-shot-key');
     const img = el.querySelector('img');
     if (img) {
-      img.src = `/screenshots/${lang}/${key}.jpg`;
+      img.src = `/screenshots/${shotLang}/${key}.jpg`;
       const altKey = el.getAttribute('data-shot-alt-key');
       if (altKey) {
         const alt = getDeep(D, altKey);

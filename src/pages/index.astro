@@ -1,8 +1,18 @@
 ---
 import { I18N } from '../data/i18n.js';
 
-const LANGS = ['ko', 'en', 'ja', 'zh-TW'];
-const LANG_LABELS = { ko: '한국어', en: 'English', ja: '日本語', 'zh-TW': '繁體中文' };
+const LANGS = ['ko', 'en', 'ja', 'zh-CN', 'zh-TW', 'es', 'pt-BR', 'de', 'fr'];
+const LANG_LABELS = {
+  ko: '한국어',
+  en: 'English',
+  ja: '日本語',
+  'zh-CN': '简体中文',
+  'zh-TW': '繁體中文',
+  es: 'Español',
+  'pt-BR': 'Português',
+  de: 'Deutsch',
+  fr: 'Français',
+};
 
 const APP_STORE_URL = 'https://apps.apple.com/app/dreamcat'; // TODO: 출시 후 실제 URL 로 갱신
 const ICON = '/icon.png';
@@ -228,14 +238,6 @@ const LAST_UPDATED = '2026-06-01';
           <div class="ipad-frame" data-shot-key="ipad_home"><img alt="iPad home" /></div>
           <div class="ipad-frame ipad-back" data-shot-key="ipad_dream"><img alt="iPad dream" /></div>
         </div>
-      </section>
-
-      <!-- ─── Languages ────────────────────────────── -->
-      <section class="section langs reveal">
-        <span class="eyebrow center" data-tr="languages.eyebrow">글로벌</span>
-        <h2 class="center" data-tr="languages.h2">9개 언어 지원</h2>
-        <p class="center langs-body" data-tr="languages.body">내 모국어로, 가장 익숙한 방식으로 꿈을 이루세요.</p>
-        <p class="lang-list" data-tr="languages.list"></p>
       </section>
 
       <!-- ─── Final CTA ────────────────────────────── -->
