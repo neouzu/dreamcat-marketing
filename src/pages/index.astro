@@ -71,6 +71,8 @@ const LAST_UPDATED = '2026-06-01';
       <!-- ─── Hero — 좌우 split, 한 viewport 안에 완결 ─── -->
       <section class="hero">
         <div class="hero-bg" aria-hidden="true">
+          <!-- 랜덤 roomskin/garden 배경 — JS 가 inline style 로 설정 -->
+          <div class="hero-bg-image" id="hero-bg-image"></div>
           <img src="/icons/cat_star_gold.png" class="hero-deco d1" alt="" />
           <img src="/icons/paws.png" class="hero-deco d2" alt="" />
           <img src="/icons/coin.png" class="hero-deco d3" alt="" />
@@ -524,7 +526,7 @@ const LAST_UPDATED = '2026-06-01';
         .navlinks { display: none; }
       }
 
-      /* ─── Hero — 좌우 split + 컴팩트 고정 높이 + 앱 sky blue 톤 ─── */
+      /* ─── Hero — 좌우 split + 고정 높이 + sky blue + 랜덤 배경 이미지 ─── */
       .hero {
         position: relative;
         height: 640px;
@@ -533,9 +535,29 @@ const LAST_UPDATED = '2026-06-01';
         padding: 0 max(20px, 5vw);
         overflow: hidden;
         background:
-          radial-gradient(ellipse 50% 70% at 78% 50%, rgba(36, 156, 227, 0.18) 0%, transparent 60%),
-          radial-gradient(ellipse 40% 50% at 12% 75%, rgba(255, 233, 168, 0.25) 0%, transparent 60%),
-          linear-gradient(180deg, #f4faff 0%, #e6f2fd 100%);
+          linear-gradient(180deg, #4fb8e8 0%, #6cc7eb 100%);
+      }
+      /* 랜덤 배경 이미지 — 낮은 투명도로 깔림, JS 가 background-image 지정. */
+      .hero-bg-image {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.22;
+        mix-blend-mode: luminosity;
+        transition: opacity 0.6s ease;
+      }
+      /* 가독성 향상용 부드러운 오버레이 — sky blue 톤 강조 */
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 60% 70% at 25% 50%, rgba(36, 156, 227, 0.35) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 60% at 78% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 60%),
+          linear-gradient(180deg, rgba(79, 184, 232, 0.25) 0%, rgba(108, 199, 235, 0.35) 100%);
+        z-index: 0;
+        pointer-events: none;
       }
       .hero-bg {
         position: absolute;
@@ -545,9 +567,9 @@ const LAST_UPDATED = '2026-06-01';
       }
       .hero-deco {
         position: absolute;
-        opacity: 0.7;
+        opacity: 0.85;
         animation: floaty 7s ease-in-out infinite;
-        filter: drop-shadow(0 4px 8px rgba(36, 80, 130, 0.08));
+        filter: drop-shadow(0 4px 10px rgba(20, 80, 130, 0.25));
       }
       .hero .d1 { width: 38px; top: 14%; left: 5%; animation-delay: 0s; }
       .hero .d2 { width: 32px; top: 30%; left: 38%; animation-delay: 0.6s; opacity: 0.5; }
@@ -586,7 +608,7 @@ const LAST_UPDATED = '2026-06-01';
         padding: 7px 16px;
         border-radius: 999px;
         margin-bottom: 24px;
-        box-shadow: 0 4px 14px rgba(36, 156, 227, 0.18);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
       }
       .hero-headline {
         font-weight: 900;
@@ -594,24 +616,25 @@ const LAST_UPDATED = '2026-06-01';
         line-height: 1.12;
         letter-spacing: -0.025em;
         margin-bottom: 24px;
-        color: var(--text);
+        color: #fff;
+        text-shadow: 0 2px 16px rgba(20, 80, 130, 0.25);
       }
       .hero-headline .hl-line {
         display: block;
         white-space: nowrap;
       }
       .hero-headline .hl-line.accent {
-        background: linear-gradient(120deg, #249ce3 0%, #1880c3 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #fff8c8;
+        background: none;
+        -webkit-text-fill-color: #fff8c8;
         padding-bottom: 0.06em;
       }
       .hero-sub {
         font-size: clamp(15px, 1.25vw, 18px);
-        color: var(--text-soft);
+        color: rgba(255, 255, 255, 0.94);
         line-height: 1.65;
         margin-bottom: 32px;
+        text-shadow: 0 1px 8px rgba(20, 80, 130, 0.2);
       }
 
       /* Store CTA */
@@ -678,15 +701,17 @@ const LAST_UPDATED = '2026-06-01';
         gap: 6px;
         font-size: 12px;
         font-weight: 600;
-        color: var(--text-soft);
+        color: rgba(255, 255, 255, 0.92);
+        text-shadow: 0 1px 4px rgba(20, 80, 130, 0.25);
       }
       .trust-dot {
-        width: 5px;
-        height: 5px;
-        background: var(--green);
+        width: 6px;
+        height: 6px;
+        background: #aaf3bf;
         border-radius: 50%;
+        box-shadow: 0 0 8px rgba(170, 243, 191, 0.6);
       }
-      .trust-sep { color: var(--text-mute); font-weight: 700; }
+      .trust-sep { color: rgba(255, 255, 255, 0.5); font-weight: 700; }
 
       /* Cat stage */
       .hero-cat-stage {

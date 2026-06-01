@@ -93,6 +93,37 @@ function applyLang(lang) {
 
 applyLang(detectLang());
 
+// ───────── 랜덤 hero 배경 이미지 ─────────
+// roomskin / garden 중에서 매번 다른 분위기로 깔림 (sky blue 위에 luminosity blend).
+const HERO_BACKGROUNDS = [
+  '/bg/roomskin_01.jpg',
+  '/bg/roomskin_02.jpg',
+  '/bg/roomskin_03.jpg',
+  '/bg/roomskin_04.jpg',
+  '/bg/roomskin_05.jpg',
+  '/bg/roomskin_06.jpg',
+  '/bg/roomskin_07.jpg',
+  '/bg/roomskin_08.jpg',
+  '/bg/roomskin_09.jpg',
+  '/bg/bg_cat_room.jpg',
+  '/bg/bg_garden_loop.jpg',
+  '/bg/bg_garden_top.jpg',
+];
+(function setRandomHeroBg() {
+  const el = document.getElementById('hero-bg-image');
+  if (!el) return;
+  const pick = HERO_BACKGROUNDS[Math.floor(Math.random() * HERO_BACKGROUNDS.length)];
+  // 부드러운 fade-in
+  const img = new Image();
+  img.onload = () => {
+    el.style.backgroundImage = `url('${pick}')`;
+  };
+  img.onerror = () => {
+    /* 무시 — 단색 sky blue 만 보임 */
+  };
+  img.src = pick;
+})();
+
 // 언어 메뉴 토글
 const langPop = document.querySelector('[data-popup="lang"]');
 const langBtn = langPop?.querySelector('.lang-btn');
