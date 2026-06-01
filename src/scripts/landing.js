@@ -138,66 +138,29 @@ onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
 // ───────── Rive (cat.riv) ─────────
-function tryInit(opts) {
-  return new Promise((resolve) => {
-    let settled = false;
-    const done = (ok) => {
-      if (!settled) {
-        settled = true;
-        resolve(ok);
-      }
-    };
-    try {
-      const r = new Rive({
-        ...opts,
-        onLoad: () => {
-          try {
-            r.resizeDrawingSurfaceToCanvas();
-          } catch (e) {}
-          console.log('[Rive] onLoad OK', opts.stateMachines || '(no SM)', opts.src);
-          done(true);
-        },
-        onLoadError: (e) => {
-          console.warn('[Rive] onLoadError', opts.stateMachines || '(no SM)', opts.src, e);
-          done(false);
-        },
-      });
-    } catch (e) {
-      console.error('[Rive] init threw', e);
-      done(false);
-    }
-  });
-}
-
+// 앱과 동일하게 'Main' SM + ViewModel Data Binding (autoBind: true) 사용.
 let riveLoaded = false;
-async function loadRive() {
+function loadRive() {
   if (riveLoaded) return;
   riveLoaded = true;
   const canvas = document.getElementById('cat-canvas');
   if (!canvas) return;
 
-  const layout = new Layout({ fit: Fit.Contain, alignment: Alignment.Center });
-  const base = { canvas, autoplay: true, layout };
-
-  // 시도 체인: 가장 가능성 높은 것부터
-  const attempts = [
-    { ...base, src: '/rive/cat.riv', autoBind: true, stateMachines: 'Main' },
-    { ...base, src: '/rive/cat.riv', autoBind: true, stateMachines: 'State Machine 1' },
-    { ...base, src: '/rive/cat.riv', autoBind: true },
-    { ...base, src: '/rive/cat.riv' },
-    { ...base, src: '/rive/cat_idle.riv', autoBind: true },
-    { ...base, src: '/rive/cat_idle.riv' },
-  ];
-
-  for (let i = 0; i < attempts.length; i++) {
-    const ok = await tryInit(attempts[i]);
-    if (ok) {
+  const r = new Rive({
+    src: '/rive/cat.riv',
+    canvas,
+    autoplay: true,
+    autoBind: true,
+    stateMachines: 'Main',
+    layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
+    onLoad: () => {
+      try {
+        r.resizeDrawingSurfaceToCanvas();
+      } catch (e) {}
       canvas.classList.add('loaded');
-      console.log('[Rive] ✅ success on attempt', i + 1);
-      return;
-    }
-  }
-  console.error('[Rive] all attempts failed — fallback PNG remains visible');
+    },
+    // 로드 실패해도 fallback PNG 그대로 노출 — 별도 처리 불필요
+  });
 }
 
 // hero 영역 진입 시 lazy load
