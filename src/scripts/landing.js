@@ -53,7 +53,11 @@ function applyLang(lang) {
 
   document.querySelectorAll('[data-tr]').forEach((el) => {
     const v = getDeep(D, el.getAttribute('data-tr'));
-    if (typeof v === 'string') el.textContent = v;
+    if (typeof v === 'string') {
+      // \n 이 있으면 <br/> 로 자동 변환 — 카피 줄바꿈 의도 살리기 위해
+      if (v.indexOf('\n') >= 0) el.innerHTML = v.replace(/\n/g, '<br/>');
+      else el.textContent = v;
+    }
   });
   document.querySelectorAll('[data-tr-html]').forEach((el) => {
     const v = getDeep(D, el.getAttribute('data-tr-html'));
