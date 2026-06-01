@@ -6,7 +6,7 @@ export const I18N = {
     htmlLang: 'ko',
     title: '드림캣: AI 목표 코치·루틴 플래너',
     metaDesc: '꿈을 이루는 AI 고양이. AI 가 큰 꿈을 오늘 할 수 있는 한 걸음으로 쪼개주는 목표 달성 앱.',
-    nav: { features: '둘러보기', how: '이야기', pricing: '가격', faq: 'FAQ', cta: '다운로드' },
+    nav: { features: '둘러보기', how: '이야기', pricing: '가격', faq: 'FAQ', cta: '다운로드', androidComing: 'Google Play 는 곧 출시돼요' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '꿈을 이루어 주는 고양이와',
@@ -148,7 +148,7 @@ export const I18N = {
     htmlLang: 'en',
     title: 'DreamCat: AI Goal Coach & Planner',
     metaDesc: 'An AI cat that helps you achieve your dreams. Break big dreams into one doable step for today.',
-    nav: { features: 'Explore', how: 'Story', pricing: 'Pricing', faq: 'FAQ', cta: 'Download' },
+    nav: { features: 'Explore', how: 'Story', pricing: 'Pricing', faq: 'FAQ', cta: 'Download', androidComing: 'Google Play — coming soon' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: 'Every day with a cat',
@@ -290,7 +290,7 @@ export const I18N = {
     htmlLang: 'ja',
     title: 'DreamCat — AI目標コーチ・プランナー',
     metaDesc: '夢を叶えるAI猫。大きな夢を今日できる一歩に変えてくれる目標達成アプリ。',
-    nav: { features: 'のぞいてみる', how: 'ストーリー', pricing: '価格', faq: 'FAQ', cta: 'ダウンロード' },
+    nav: { features: 'のぞいてみる', how: 'ストーリー', pricing: '価格', faq: 'FAQ', cta: 'ダウンロード', androidComing: 'Google Play は近日公開' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '夢をかなえる猫と、',
@@ -432,7 +432,7 @@ export const I18N = {
     htmlLang: 'zh-Hant',
     title: 'DreamCat — AI 目標教練·習慣規劃',
     metaDesc: '陪你實現夢想的 AI 貓教練。把大夢想拆成今天能做的一小步。',
-    nav: { features: '看看', how: '故事', pricing: '價格', faq: 'FAQ', cta: '下載' },
+    nav: { features: '看看', how: '故事', pricing: '價格', faq: 'FAQ', cta: '下載', androidComing: 'Google Play 即將推出' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '陪你實現夢想的貓,',
@@ -574,7 +574,7 @@ export const I18N = {
     htmlLang: 'zh-Hans',
     title: 'DreamCat — AI 目标教练·习惯规划',
     metaDesc: '陪你实现梦想的 AI 猫教练。把大梦想拆成今天能做的一小步。',
-    nav: { features: '看看', how: '故事', pricing: '价格', faq: 'FAQ', cta: '下载' },
+    nav: { features: '看看', how: '故事', pricing: '价格', faq: 'FAQ', cta: '下载', androidComing: 'Google Play 即将上线' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: '陪你实现梦想的猫,',
@@ -649,7 +649,7 @@ export const I18N = {
     htmlLang: 'es',
     title: 'DreamCat — Tu coach felino de sueños',
     metaDesc: 'Un gato IA que te ayuda a cumplir tus sueños. Convierte sueños grandes en un pequeño paso para hoy.',
-    nav: { features: 'Explorar', how: 'Historia', pricing: 'Precios', faq: 'FAQ', cta: 'Descargar' },
+    nav: { features: 'Explorar', how: 'Historia', pricing: 'Precios', faq: 'FAQ', cta: 'Descargar', androidComing: 'Google Play — próximamente' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: 'Cada día con un gato',
@@ -716,7 +716,7 @@ export const I18N = {
     htmlLang: 'pt-BR',
     title: 'DreamCat — Seu coach felino de sonhos',
     metaDesc: 'Um gato IA que ajuda a realizar seus sonhos. Transforme sonhos grandes em um pequeno passo para hoje.',
-    nav: { features: 'Explorar', how: 'História', pricing: 'Preços', faq: 'FAQ', cta: 'Baixar' },
+    nav: { features: 'Explorar', how: 'História', pricing: 'Preços', faq: 'FAQ', cta: 'Baixar', androidComing: 'Google Play — em breve' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: 'Cada dia com um gato',
@@ -781,7 +781,7 @@ export const I18N = {
     htmlLang: 'de',
     title: 'DreamCat — Dein KI-Katzencoach für Träume',
     metaDesc: 'Eine KI-Katze, die deine Träume Wirklichkeit werden lässt. Mach große Träume zum kleinen Schritt für heute.',
-    nav: { features: 'Entdecken', how: 'Geschichte', pricing: 'Preise', faq: 'FAQ', cta: 'Laden' },
+    nav: { features: 'Entdecken', how: 'Geschichte', pricing: 'Preise', faq: 'FAQ', cta: 'Laden', androidComing: 'Google Play — demnächst' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: 'Jeden Tag mit einer Katze,',
@@ -846,7 +846,7 @@ export const I18N = {
     htmlLang: 'fr',
     title: 'DreamCat — Ton coach félin de rêves',
     metaDesc: 'Un chat IA qui aide à réaliser tes rêves. Transforme les grands rêves en un petit pas pour aujourd\'hui.',
-    nav: { features: 'Explorer', how: 'Histoire', pricing: 'Prix', faq: 'FAQ', cta: 'Télécharger' },
+    nav: { features: 'Explorer', how: 'Histoire', pricing: 'Prix', faq: 'FAQ', cta: 'Télécharger', androidComing: 'Google Play — bientôt disponible' },
     hero: {
       eyebrow: 'DreamCat',
       h1Top: 'Chaque jour avec un chat',

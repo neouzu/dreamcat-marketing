@@ -116,6 +116,37 @@ function applyLang(lang) {
 
 applyLang(detectLang());
 
+// ───────── nav 다운로드 버튼 — Android UA 가드 ─────────
+// iOS / Mac / 기타 → App Store (기본 동작 그대로).
+// Android UA 면 preventDefault + "Google Play 곧 출시" toast.
+function isAndroid() {
+  const ua = navigator.userAgent || '';
+  return /android/i.test(ua);
+}
+
+let toastTimerId = null;
+function showToast(message) {
+  const el = document.getElementById('dc-toast');
+  if (!el) return;
+  el.textContent = message;
+  el.classList.add('show');
+  if (toastTimerId) clearTimeout(toastTimerId);
+  toastTimerId = setTimeout(() => {
+    el.classList.remove('show');
+  }, 2600);
+}
+
+document.querySelectorAll('.nav-cta').forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    if (!isAndroid()) return; // iOS / Mac / 기타 — 기본 동작 (App Store)
+    e.preventDefault();
+    const lang = document.documentElement.lang || 'ko';
+    const dKey = SUPPORTED.find((k) => I18N[k]?.htmlLang === lang) || 'ko';
+    const msg = I18N[dKey]?.nav?.androidComing || 'Google Play — coming soon';
+    showToast(msg);
+  });
+});
+
 // ───────── Hero 배경 자동 교체 (5초마다 cross-fade) ─────────
 const HERO_BACKGROUNDS = [
   '/bg/roomskin_01.jpg',
