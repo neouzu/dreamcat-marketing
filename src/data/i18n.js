@@ -9,6 +9,7 @@ export const I18N = {
     nav: { features: '둘러보기', how: '이야기', pricing: '가격', faq: 'FAQ', cta: '다운로드', androidComing: 'Google Play 는 곧 출시돼요' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 정식 출시 · App Store',
       h1Top: '꿈을 이루어 주는 고양이와',
       h1Highlight: '함께하는 나의 하루',
       sub: '큰 꿈을 오늘의 작은 한 걸음으로.\n매일 옆에서 응원하는 작은 친구.',
@@ -151,6 +152,7 @@ export const I18N = {
     nav: { features: 'Explore', how: 'Story', pricing: 'Pricing', faq: 'FAQ', cta: 'Download', androidComing: 'Google Play — coming soon' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 Now Live · App Store',
       h1Top: 'Every day with a cat',
       h1Highlight: 'that helps your dreams come true',
       sub: 'Turn big dreams into one small step for today.\nA little friend cheering you on, every day.',
@@ -293,6 +295,7 @@ export const I18N = {
     nav: { features: 'のぞいてみる', how: 'ストーリー', pricing: '価格', faq: 'FAQ', cta: 'ダウンロード', androidComing: 'Google Play は近日公開' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 リリース · App Store',
       h1Top: '夢をかなえる猫と、',
       h1Highlight: '毎日いっしょに',
       sub: '大きな夢を、今日の小さな一歩に。\n毎日そばで応援してくれる小さな友達。',
@@ -435,6 +438,7 @@ export const I18N = {
     nav: { features: '看看', how: '故事', pricing: '價格', faq: 'FAQ', cta: '下載', androidComing: 'Google Play 即將推出' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 正式上線 · App Store',
       h1Top: '陪你實現夢想的貓,',
       h1Highlight: '陪你度過每一天',
       sub: '把大夢想,變成今天的一小步。\n每天陪在你身邊的小夥伴。',
@@ -577,6 +581,7 @@ export const I18N = {
     nav: { features: '看看', how: '故事', pricing: '价格', faq: 'FAQ', cta: '下载', androidComing: 'Google Play 即将上线' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 正式上线 · App Store',
       h1Top: '陪你实现梦想的猫,',
       h1Highlight: '陪你度过每一天',
       sub: '把大梦想,变成今天的一小步。\n每天陪在你身边的小伙伴。',
@@ -652,6 +657,7 @@ export const I18N = {
     nav: { features: 'Explorar', how: 'Historia', pricing: 'Precios', faq: 'FAQ', cta: 'Descargar', androidComing: 'Google Play — próximamente' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 Ya disponible · App Store',
       h1Top: 'Cada día con un gato',
       h1Highlight: 'que hace realidad tus sueños',
       sub: 'Convierte sueños grandes en un pequeño paso para hoy.\nUn amiguito que te anima cada día.',
@@ -719,6 +725,7 @@ export const I18N = {
     nav: { features: 'Explorar', how: 'História', pricing: 'Preços', faq: 'FAQ', cta: 'Baixar', androidComing: 'Google Play — em breve' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 Disponível · App Store',
       h1Top: 'Cada dia com um gato',
       h1Highlight: 'que realiza seus sonhos',
       sub: 'Transforme sonhos grandes em um pequeno passo para hoje.\nUm amigo que te apoia todos os dias.',
@@ -784,6 +791,7 @@ export const I18N = {
     nav: { features: 'Entdecken', how: 'Geschichte', pricing: 'Preise', faq: 'FAQ', cta: 'Laden', androidComing: 'Google Play — demnächst' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 Jetzt verfügbar · App Store',
       h1Top: 'Jeden Tag mit einer Katze,',
       h1Highlight: 'die Träume wahr macht',
       sub: 'Verwandle große Träume in einen kleinen Schritt für heute.\nEin kleiner Freund, der dich jeden Tag anfeuert.',
@@ -849,6 +857,7 @@ export const I18N = {
     nav: { features: 'Explorer', how: 'Histoire', pricing: 'Prix', faq: 'FAQ', cta: 'Télécharger', androidComing: 'Google Play — bientôt disponible' },
     hero: {
       eyebrow: 'DreamCat',
+      launchBadge: '🎉 Disponible · App Store',
       h1Top: 'Chaque jour avec un chat',
       h1Highlight: 'qui réalise tes rêves',
       sub: 'Transforme les grands rêves en un petit pas pour aujourd\'hui.\nUn petit ami qui t\'encourage chaque jour.',
